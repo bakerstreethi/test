@@ -1,0 +1,55 @@
+/* HOO TRAVEL design tokens — 与 DESIGN.md 对应。页面里只用变量名，不写原始色值。 */
+:root {
+  /* 中性色 */
+  --night-950: #170F3A;
+  --night-900: #261A55;
+  --night-800: #2F2266;
+  --night-700: #3B2F78;
+  --text-on-night: #F3F0FA;
+  --text-on-night-soft: #D9D0F4;
+  --text-on-night-muted: #B4ABDD;
+  --paper: #F7F6FB;
+  --mist: #EEEBF6;
+  --line-on-paper: #E1DCEF;
+  --text-muted-on-paper: #6F6A8E;
+
+  /* 品牌色 */
+  --purple: #5237A0;
+  --purple-hover: #43308A;
+  --purple-bright: #7D63C8; /* 仅装饰，不放文字 */
+  --lime: #D8F36A;          /* 每屏一处，整页不超过 3% */
+  --sand: #E8D9C5;
+
+  /* 状态色（浅底 / 深底） */
+  --success: #2F7D4F; --success-on-night: #8FD9A8;
+  --warning: #9A5B00; --warning-on-night: #F2C078;
+  --error: #B3382C;   --error-on-night: #FF9A8F;
+
+  /* 字体 */
+  --font-cn: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --font-latin: 'Outfit', 'Noto Sans SC', system-ui, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, Menlo, monospace;
+
+  --fs-display: clamp(40px, 6vw, 80px);
+  --fs-h1: clamp(34px, 4.4vw, 56px);
+  --fs-h2: clamp(28px, 3.2vw, 40px);
+  --fs-h3: clamp(22px, 2.2vw, 28px);
+  --fs-h4: clamp(18px, 1.6vw, 20px);
+  --fs-body: clamp(16px, 1.3vw, 17px);
+  --fs-small: 14px;
+  --fs-label: 11px;
+
+  /* 间距（4 的倍数） */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px; --sp-5: 24px;
+  --sp-6: 32px; --sp-7: 48px; --sp-8: 64px; --sp-9: 96px; --sp-10: 128px;
+  --content-width: 1200px;
+  --gutter: clamp(20px, 4.4vw, 64px);
+  --section-space: clamp(72px, 8.3vw, 120px);
+
+  /* 形状与深度 */
+  --radius-arch: 999px 999px 0 0;
+  --radius-pill: 999px;
+  --radius-card: 12px;
+  --radius-photo: 8px;
+  --shadow-paper: 0 12px 32px rgba(38, 26, 85, 0.10);
+}
