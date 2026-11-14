@@ -1,12 +1,12 @@
 {
   "core": {
-    "ink": "#1D1546",
-    "deep": "#2D2062",
-    "purple": "#4B2FB5",
-    "bright": "#6B4FD8",
-    "lavender": "#D5CAFF",
-    "mist": "#F3F0FF",
+    "night": "#261A55",
+    "purple": "#5237A0",
+    "bright": "#7D63C8",
+    "lavender": "#D9D0F4",
+    "mist": "#F3F0FA",
     "cream": "#FAF7F2",
+    "sand": "#E8D9C5",
     "lime": "#D8F36A",
     "slate": "#6F6A8E"
   },
@@ -22,6 +22,9 @@
     "europe_draft": {
       "apricot": "#F6D8C2",
       "terracotta": "#D8825C"
+    },
+    "retreat_draft": {
+      "aubergine": "#3B2457"
     }
   }
 }
