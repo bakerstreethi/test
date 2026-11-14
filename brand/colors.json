@@ -1,0 +1,27 @@
+{
+  "core": {
+    "ink": "#1D1546",
+    "deep": "#2D2062",
+    "purple": "#4B2FB5",
+    "bright": "#6B4FD8",
+    "lavender": "#D5CAFF",
+    "mist": "#F3F0FF",
+    "cream": "#FAF7F2",
+    "lime": "#D8F36A",
+    "slate": "#6F6A8E"
+  },
+  "lines": {
+    "uk": {
+      "honey": "#D9B88B",
+      "moss": "#55704F"
+    },
+    "nordic": {
+      "ice": "#BFE2F5",
+      "aurora": "#5ED9BC"
+    },
+    "europe_draft": {
+      "apricot": "#F6D8C2",
+      "terracotta": "#D8825C"
+    }
+  }
+}
