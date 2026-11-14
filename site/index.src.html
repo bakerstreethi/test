@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HOO TRAVEL 花火出国游 · 英国与北欧从容旅行</title>
+<meta name="description" content="英国与欧洲精品旅行，私人定制策划。深耕稀缺庄园酒店、合规专车与极地探险，为整趟假期的精彩与从容质感负责。">
+<meta name="theme-color" content="#261A55">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600&family=Outfit:wght@400;500;600&display=swap">
+<style>
+/* ===== tokens: 与 brand/tokens.css 一致 ===== */
+:root{
+  --night-950:#170F3A; --night-900:#261A55; --night-800:#2F2266; --night-700:#3B2F78;
+  --text-on-night:#F3F0FA; --text-on-night-soft:#D9D0F4; --text-on-night-muted:#B4ABDD;
+  --paper:#F7F6FB; --mist:#EEEBF6; --line-on-paper:#E1DCEF; --text-muted-on-paper:#6F6A8E;
+  --purple:#5237A0; --purple-hover:#43308A; --purple-bright:#7D63C8; --lime:#D8F36A; --sand:#E8D9C5;
+  --font-cn:'Noto Sans SC','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+  --font-latin:'Outfit','Noto Sans SC',system-ui,sans-serif;
+  --font-mono:'DM Mono',ui-monospace,Menlo,monospace;
+  --fs-display:clamp(40px,6vw,80px); --fs-h1:clamp(34px,4.4vw,56px); --fs-h2:clamp(28px,3.2vw,40px);
+  --fs-h3:clamp(22px,2.2vw,28px); --fs-h4:clamp(18px,1.6vw,20px); --fs-body:clamp(16px,1.3vw,17px);
+  --fs-small:14px; --fs-label:11px;
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:24px; --sp-6:32px; --sp-7:48px; --sp-8:64px; --sp-9:96px;
+  --content-width:1200px; --gutter:clamp(20px,4.4vw,64px); --section-space:clamp(72px,8.3vw,120px);
+  --radius-arch:999px 999px 0 0; --radius-pill:999px; --radius-card:12px; --radius-photo:8px;
+  --shadow-paper:0 12px 32px rgba(38,26,85,.10);
+  --nav-h:76px;
+}
+*{box-sizing:border-box;margin:0}
+html{color-scheme:dark;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{background:var(--night-900);color:var(--text-on-night);font-family:var(--font-cn);font-size:var(--fs-body);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none;padding:0}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:4px}
+.on-paper :focus-visible{outline-color:var(--purple)}
+.skip{position:absolute;left:var(--gutter);top:-80px;background:var(--text-on-night);color:var(--night-900);padding:10px 18px;border-radius:var(--radius-pill);z-index:100;font-size:14px}
+.skip:focus{top:12px}
+.wrap{max-width:calc(var(--content-width) + 2*var(--gutter));margin:0 auto;padding-inline:var(--gutter)}
+section{padding-block:var(--section-space)}
+.label{font-family:var(--font-mono);font-size:var(--fs-label);letter-spacing:.16em;text-transform:uppercase;color:var(--text-on-night-soft);display:flex;align-items:center;gap:10px}
+.label .dot{width:8px;height:8px;border-radius:50%;background:var(--lime);flex:none}
+.on-paper .label{color:var(--text-muted-on-paper)}
+h1,h2,h3,h4{font-weight:600;letter-spacing:-.01em;text-wrap:balance}
+h1{font-size:var(--fs-display);line-height:1.1}
+h2{font-size:var(--fs-h2);line-height:1.2}
+h3{font-size:var(--fs-h3);line-height:1.3;font-weight:500}
+h4{font-size:var(--fs-h4);line-height:1.4;font-weight:500}
+.lead{color:var(--text-on-night-soft);max-width:34em}
+.on-paper .lead{color:var(--text-muted-on-paper)}
+.mark{background:linear-gradient(transparent 72%,var(--lime) 72%,var(--lime) 92%,transparent 92%);padding-inline:2px}
+.num{font-family:var(--font-latin)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--radius-pill);font-size:15px;font-weight:500;line-height:1.2;transition:background .2s,color .2s,border-color .2s;white-space:nowrap}
+.btn-primary{background:var(--text-on-night);color:var(--night-900)}
+.btn-primary:hover{background:#fff}
+.btn-secondary{border:1px solid var(--purple-bright);color:var(--text-on-night)}
+.btn-secondary:hover{border-color:var(--text-on-night-soft)}
+.on-paper .btn-primary{background:var(--purple);color:#fff}
+.on-paper .btn-primary:hover{background:var(--purple-hover)}
+.link{display:inline-flex;align-items:center;gap:8px;font-weight:500;border-bottom:2px solid var(--lime);padding-bottom:2px}
+.on-paper .link{color:var(--purple);border-bottom-color:var(--purple)}
+
+/* header */
+.site-header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .25s,backdrop-filter .25s}
+.site-header.scrolled,.site-header.open{background:rgba(38,26,85,.88);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);gap:24px}
+.logo svg{height:28px;width:auto}
+.nav-links{display:flex;gap:30px;font-size:14px;color:var(--text-on-night-soft)}
+.nav-links a{padding:6px 0;border-bottom:2px solid transparent}
+.nav-links a:hover,.nav-links a[aria-current]{color:var(--text-on-night);border-bottom-color:var(--lime)}
+.nav-cta{padding:10px 22px;font-size:14px}
+.nav-toggle{display:none;background:none;border:1px solid var(--night-700);color:var(--text-on-night);width:44px;height:44px;border-radius:50%;cursor:pointer;align-items:center;justify-content:center}
+.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{display:block;width:18px;height:1.5px;background:currentColor;position:relative;content:""}
+.nav-toggle span::before{position:absolute;top:-6px}.nav-toggle span::after{position:absolute;top:6px}
+.nav-panel{display:flex;align-items:center;gap:30px}
+
+/* hero */
+.hero{padding-block:calc(var(--nav-h) + 40px) 0;min-height:100svh;display:flex;flex-direction:column}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--sp-8);align-items:center;flex:1}
+.hero-copy{padding-bottom:0}
+.hero h1{margin:var(--sp-5) 0 var(--sp-5)}
+.hero h1 small{display:block;font-size:.5em;font-weight:500;letter-spacing:.01em;color:var(--sand);margin-top:.35em}
+.hero .tagline{font-family:var(--font-latin);color:var(--sand);font-size:18px;letter-spacing:.02em}
+.hero .tagline-cn{color:var(--text-on-night-soft);margin-top:4px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:var(--sp-6)}
+.hero-photo{border-radius:var(--radius-arch);overflow:hidden;aspect-ratio:3/4.1;max-height:min(78vh,760px);width:100%;justify-self:end;max-width:520px}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:62% center}
+.hero-strip{border-top:1px solid var(--night-700);margin-top:var(--sp-7);padding-block:var(--sp-5);display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-4);font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;color:var(--text-on-night-muted)}
+
+/* section heads */
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:var(--sp-6);margin-bottom:var(--sp-7);flex-wrap:wrap}
+.head h2{margin-top:var(--sp-3)}
+.head .lead{margin-top:var(--sp-3)}
+
+/* destinations */
+.dest{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(260px,auto);gap:var(--sp-4)}
+.tile{position:relative;border-radius:var(--radius-photo);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:var(--sp-5);min-height:260px;isolation:isolate;background:var(--night-800);border:1px solid var(--night-700)}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .6s}
+.tile.photo{border-color:transparent}
+.tile.photo::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(38,26,85,0) 30%,rgba(38,26,85,.55) 62%,#261A55 100%)}
+.tile:hover img{transform:scale(1.035)}
+.tile:hover{border-color:var(--purple-bright)}
+.tile .country{font-family:var(--font-mono);font-size:var(--fs-label);letter-spacing:.16em;text-transform:uppercase;color:var(--text-on-night-soft)}
+.tile h3{margin:6px 0 8px;font-size:clamp(22px,2vw,26px)}
+.tile p{font-size:var(--fs-small);color:var(--text-on-night-muted);line-height:1.6;max-width:30em}
+.tile .go{position:absolute;right:var(--sp-5);top:var(--sp-5);font-size:20px;color:var(--text-on-night-soft)}
+.t-uk{grid-column:span 6;grid-row:span 2}
+.t-sm{grid-column:span 3}
+.tile.type{background:var(--night-800)}
+.tile.type .big{font-size:clamp(34px,3.4vw,48px);font-weight:600;letter-spacing:-.01em;margin-bottom:auto;padding-top:var(--sp-2);color:var(--text-on-night)}
+.tile.type::before{content:"";position:absolute;right:-24px;bottom:-1px;width:88px;height:120px;border:1.5px solid var(--night-700);border-bottom:0;border-radius:var(--radius-arch);z-index:-1}
+.dest-note{margin-top:var(--sp-5);color:var(--text-on-night-muted);font-size:var(--fs-small)}
+
+/* routes (paper) */
+.paper{background:var(--paper);color:var(--night-900)}
+.routes .row{display:grid;grid-template-columns:56px minmax(0,1fr) 220px 150px 28px;gap:var(--sp-5);align-items:center;padding:var(--sp-5) var(--sp-4) var(--sp-5) var(--sp-5);border-bottom:1px solid var(--line-on-paper);position:relative;transition:background .2s}
+.routes ul{border-top:1px solid var(--line-on-paper)}
+.routes .row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--purple);opacity:0;transition:opacity .2s}
+.routes .row:hover,.routes .row:focus-visible{background:var(--mist)}
+.routes .row:hover::before,.routes .row:focus-visible::before{opacity:1}
+.routes .idx{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;color:var(--text-muted-on-paper)}
+.routes .ttl{font-size:var(--fs-h4);font-weight:500;line-height:1.5;text-wrap:balance}
+.routes .desc{font-size:var(--fs-small);color:var(--text-muted-on-paper);line-height:1.7;margin-top:4px;max-width:44em}
+.routes .meta{font-size:var(--fs-small);color:var(--text-muted-on-paper);line-height:1.6}
+.routes .meta b{font-weight:500;color:var(--night-900);display:block}
+.routes .tag{display:inline-block;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;border:1px solid var(--purple);color:var(--purple);border-radius:99px;padding:1px 9px;margin-bottom:6px}
+.routes .price{text-align:right;font-family:var(--font-latin);font-size:26px;font-weight:500;line-height:1.2}
+.routes .price small{display:block;font-family:var(--font-cn);font-size:12px;color:var(--text-muted-on-paper);font-weight:400}
+.routes .arr{color:var(--purple);font-size:18px}
+.routes-foot{display:flex;justify-content:space-between;align-items:center;gap:var(--sp-5);margin-top:var(--sp-5);flex-wrap:wrap;color:var(--text-muted-on-paper);font-size:var(--fs-small)}
+
+/* services */
+.services{padding-block:var(--sp-9)}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-6)}
+.svc li{border-top:1px solid var(--night-700);padding-top:var(--sp-5)}
+.svc h4{margin-bottom:var(--sp-2)}
+.svc p{font-size:var(--fs-small);color:var(--text-on-night-muted);line-height:1.8}
+
+/* private */
+.private{background:var(--night-800)}
+.private-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--sp-8);align-items:center}
+.private h2{margin:var(--sp-3) 0 var(--sp-5)}
+.private p+p{margin-top:var(--sp-4)}
+.private .copy p{color:var(--text-on-night-soft);max-width:33em}
+.private .link{margin-top:var(--sp-6)}
+.private-photo{border-radius:var(--radius-arch);overflow:hidden;aspect-ratio:4/5;max-width:460px;width:100%;justify-self:end}
+.private-photo img{width:100%;height:100%;object-fit:cover;object-position:55% center}
+.manor{margin-top:var(--sp-8);border:1px solid var(--night-700);border-radius:var(--radius-card);padding:var(--sp-6);display:grid;grid-template-columns:1fr auto;gap:var(--sp-5);align-items:center;background:var(--night-900)}
+.manor .label{margin-bottom:var(--sp-2)}
+.manor h3{font-size:var(--fs-h3)}
+.manor p{color:var(--text-on-night-muted);font-size:var(--fs-small);margin-top:var(--sp-2);max-width:40em}
+.manor .tags{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;color:var(--sand);margin-top:var(--sp-3)}
+.themes{display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--sp-5)}
+.themes span{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;color:var(--text-on-night-soft);border:1px solid var(--night-700);border-radius:99px;padding:5px 14px}
+
+/* why */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 var(--sp-8)}
+.why-grid li{padding:var(--sp-6) 0;border-top:1px solid var(--night-700)}
+.why-grid h4{margin-bottom:var(--sp-2)}
+.why-grid p{font-size:var(--fs-small);color:var(--text-on-night-muted);max-width:36em}
+.why-grid .tags{margin-top:var(--sp-3);display:flex;gap:6px 16px;flex-wrap:wrap;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--sand)}
+.why-foot{margin-top:var(--sp-6);border-top:1px solid var(--night-700);padding-top:var(--sp-6)}
+
+/* faq (paper) */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:var(--sp-8);align-items:start}
+.faq h2{margin:var(--sp-3) 0 var(--sp-4)}
+.faq details{border-bottom:1px solid var(--line-on-paper)}
+.faq details:first-of-type{border-top:1px solid var(--line-on-paper)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:var(--sp-4);padding:var(--sp-5) 0;font-size:var(--fs-h4);font-weight:500;line-height:1.5}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--font-latin);font-size:26px;line-height:1;color:var(--purple);flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .ans{padding:0 0 var(--sp-5);color:var(--night-900);font-size:var(--fs-small);line-height:1.9;max-width:44em}
+.faq .chip{display:inline-block;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;color:var(--purple);border:1px solid var(--purple);border-radius:99px;padding:1px 9px;margin-bottom:var(--sp-3)}
+.faq .more{margin-top:var(--sp-6);display:flex;gap:var(--sp-5);flex-wrap:wrap;align-items:center}
+
+/* cta */
+.cta{text-align:center;padding-block:calc(var(--section-space)*1.1)}
+.cta .label{justify-content:center}
+.cta h2{font-size:var(--fs-h1);margin:var(--sp-5) auto var(--sp-5);max-width:16em}
+.cta .lead{margin-inline:auto}
+.cta .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:var(--sp-6)}
+
+/* footer */
+footer{background:var(--night-950);padding-block:var(--sp-9) var(--sp-6);color:var(--text-on-night-muted);font-size:var(--fs-small)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:var(--sp-7)}
+.foot-grid h5{font-family:var(--font-mono);font-size:var(--fs-label);letter-spacing:.16em;text-transform:uppercase;font-weight:400;color:var(--text-on-night-soft);margin-bottom:var(--sp-4)}
+.foot-grid li+li{margin-top:var(--sp-2)}
+.foot-grid a:hover{color:var(--text-on-night)}
+footer .brand svg{height:30px;width:auto;margin-bottom:var(--sp-4)}
+footer .brand p{max-width:26em;line-height:1.8}
+.foot-bottom{margin-top:var(--sp-8);padding-top:var(--sp-5);border-top:1px solid var(--night-700);display:flex;justify-content:space-between;gap:var(--sp-4);flex-wrap:wrap;font-size:13px}
+.foot-bottom a{margin-left:var(--sp-5)}
+
+/* tablet */
+@media (max-width:1024px){
+  .nav-links{gap:20px}
+  .t-uk{grid-column:span 12;grid-row:span 1}.t-sm{grid-column:span 6}
+  .routes .row{grid-template-columns:44px minmax(0,1fr) 150px 120px 24px;gap:var(--sp-4)}
+  .svc{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+/* mobile */
+@media (max-width:860px){
+  :root{--nav-h:64px}
+  .nav-toggle{display:inline-flex}
+  .nav-panel{position:absolute;left:0;right:0;top:var(--nav-h);flex-direction:column;align-items:stretch;gap:0;background:var(--night-900);padding:var(--sp-3) var(--gutter) var(--sp-6);border-top:1px solid var(--night-700);display:none;height:calc(100svh - var(--nav-h));overflow-y:auto}
+  .site-header.open .nav-panel{display:flex}
+  .nav-links{flex-direction:column;gap:0;font-size:17px}
+  .nav-links a{display:block;padding:16px 0;border-bottom:1px solid var(--night-700)}
+  .nav-cta{align-self:flex-start;margin-top:var(--sp-5)}
+  .hero{min-height:0;padding-top:calc(var(--nav-h) + 28px)}
+  .hero-grid{grid-template-columns:1fr;gap:var(--sp-6)}
+  .hero-copy{padding-bottom:0}
+  .hero-photo{order:2;max-width:520px;justify-self:start;aspect-ratio:4/5;max-height:none}
+  .hero-strip{grid-template-columns:1fr 1fr;row-gap:var(--sp-3)}
+  .private-grid{grid-template-columns:1fr;gap:var(--sp-7)}
+  .private-photo{max-width:none;justify-self:stretch;aspect-ratio:4/4.6}
+  .manor{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr;gap:var(--sp-6)}
+  .routes .row{grid-template-columns:1fr auto;gap:var(--sp-2) var(--sp-4);padding:var(--sp-5) var(--sp-3)}
+  .routes .idx{display:none}
+  .routes .main{grid-column:1/3}
+  .routes .meta{grid-column:1}
+  .routes .price{grid-column:2;grid-row:2;text-align:right}
+  .routes .arr{display:none}
+}
+@media (max-width:600px){
+  .t-sm{grid-column:span 12}
+  .hero-photo{max-width:none}
+  .dest{grid-auto-rows:minmax(240px,auto)}
+  .svc{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr;gap:var(--sp-6)}
+  .foot-bottom a{margin:0 var(--sp-4) 0 0}
+  .btn{padding:13px 24px}
+  .head{margin-bottom:var(--sp-6)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.tile:hover img{transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="site-header" id="top">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="HOO TRAVEL 花火出国游 首页">{{logo-dark}}</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="打开菜单"><span></span></button>
+    <div class="nav-panel" id="nav-panel">
+      <nav aria-label="主导航">
+        <ul class="nav-links">
+          <li><a href="#destinations">目的地</a></li>
+          <li><a href="#routes">精选路线</a></li>
+          <li><a href="#private">私人定制</a></li>
+          <li><a href="#why">为什么选择 HOO</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="https://www.hootravel.com/zh-simplified/private-travel">预约私人定制</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<!-- 首屏 -->
+<section class="hero" aria-labelledby="hero-title" style="padding-bottom:0">
+  <div class="wrap hero-grid" style="width:100%">
+    <div class="hero-copy">
+      <p class="label"><span class="dot" aria-hidden="true"></span>England · Scotland · Nordic</p>
+      <h1 id="hero-title">英国与北欧<small>从容旅行 · 深度定制</small></h1>
+      <p class="tagline">Experience More. Travel Better.</p>
+      <p class="tagline-cn">为整趟假期的精彩与质感负责。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#routes">浏览精选路线</a>
+        <a class="btn btn-secondary" href="https://www.hootravel.com/zh-simplified/private-travel">预约私人定制</a>
+      </div>
+    </div>
+    <div class="hero-photo"><img src="{{img:hero-highlands}}" width="1376" height="768" alt="晨雾笼罩的高地湖泊，湖心岛上有一座古堡废墟，远处是起伏的群山" fetchpriority="high"></div>
+  </div>
+  <div class="wrap" style="width:100%">
+    <ul class="hero-strip" aria-label="服务亮点"><li>深度体验策划</li><li>独立商务小团</li><li>数字化智能路书</li><li>7×24h 顾问在线守护</li></ul>
+  </div>
+</section>
+
+<!-- 目的地 -->
+<section id="destinations" aria-labelledby="dest-title">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="label">目的地探索 · 区域深度</p>
+        <h2 id="dest-title">专注于英国和北欧</h2>
+      </div>
+      <p class="lead" style="max-width:30em">甄选英国乡村庄园慢调与欧洲壮美自然，点击探索对应区域深度体验与定制方案。</p>
+    </div>
+    <div class="dest">
+      <a class="tile photo t-uk" href="https://www.hootravel.com/zh-simplified/destinations/uk">
+        <img src="{{img:cotswolds}}" width="1200" height="896" alt="科茨沃尔德风格的石头小镇，石桥下是平静的河水" loading="lazy">
+        <span class="go" aria-hidden="true">↗</span>
+        <span class="country">英国</span><h3>把秋天留给乡村</h3>
+        <p>科茨沃尔德 · 峰区庄园 · 湖区国家公园 · 古董市集 · 英伦书卷</p>
+      </a>
+      <a class="tile type t-sm" href="https://www.hootravel.com/zh-simplified/destinations/norway">
+        <span class="go" aria-hidden="true">↗</span>
+        <span class="big">挪威</span>
+        <span class="country">Norway</span><h3>去北极圈等一次极光</h3>
+        <p>特罗姆瑟 · 罗弗敦群岛</p>
+      </a>
+      <a class="tile photo t-sm" href="https://www.hootravel.com/zh-simplified/destinations/iceland">
+        <img src="{{img:iceland}}" width="1200" height="896" alt="冰川泻湖里漂浮的蓝色浮冰，天边是日落的粉橙色" loading="lazy">
+        <span class="go" aria-hidden="true">↗</span>
+        <span class="country">冰岛</span><h3>有些景象，只属于冬天</h3>
+        <p>天然蓝冰洞 · 冰川徒步</p>
+      </a>
+      <a class="tile photo t-sm" href="https://www.hootravel.com/zh-simplified/destinations/finland">
+        <img src="{{img:finland-aurora}}" width="1200" height="896" alt="极光下的雪地木屋，窗里亮着灯" loading="lazy">
+        <span class="go" aria-hidden="true">↗</span>
+        <span class="country">芬兰</span><h3>住进雪原和森林里的冬天</h3>
+        <p>玻璃屋观星 · 哈士奇雪橇</p>
+      </a>
+      <a class="tile type t-sm" href="https://www.hootravel.com/zh-simplified/destinations/faroe-islands">
+        <span class="go" aria-hidden="true">↗</span>
+        <span class="big">法罗群岛</span>
+        <span class="country">Faroe Islands</span><h3>把公路开到大西洋边</h3>
+        <p>海上公路 · 悬崖瀑布</p>
+      </a>
+    </div>
+    <p class="dest-note">其他目的地线路陆续开放中。</p>
+  </div>
+</section>
+
+<!-- 精选路线（纸白） -->
+<section class="paper on-paper routes" id="routes" aria-labelledby="routes-title">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="label">精选路线 · 经典行程</p>
+        <h2 id="routes-title">经典路线与旅行灵感</h2>
+        <p class="lead">深耕英国庄园慢调与欧洲壮丽风景，以从容的节奏与私家专车，开启不可复制的灵感假期。</p>
+      </div>
+      <a class="link" href="https://www.hootravel.com/zh-simplified/journeys">浏览全部路线 <span aria-hidden="true">→</span></a>
+    </div>
+    <ul>
+      <li><a class="row" href="https://www.hootravel.com/zh-simplified/journeys">
+        <span class="idx">01</span>
+        <span class="main"><span class="ttl">精华6日科茨版 · 全程版（含伦敦4晚＋白崖，共10天）</span><span class="desc" style="display:block">英格兰乡村、爱丁堡、伦敦和白崖，共10天。</span></span>
+        <span class="meta"><span class="tag">定制咨询</span><b>10日9晚</b>伦敦往返</span>
+        <span class="price"><small>起价</small><span class="num">£2,152</span><small>/人</small></span><span class="arr" aria-hidden="true">→</span></a></li>
+      <li><a class="row" href="https://www.hootravel.com/zh-simplified/journeys">
+        <span class="idx">02</span>
+        <span class="main"><span class="ttl">一日游 · 科茨沃尔德</span><span class="desc" style="display:block">拜伯里、水上伯顿、斯劳特村、百老汇塔、奇平卡姆登。</span></span>
+        <span class="meta"><b>全年 · 1日游</b>伦敦往返</span>
+        <span class="price"><small>起价</small><span class="num">£75</span><small>/人</small></span><span class="arr" aria-hidden="true">→</span></a></li>
+      <li><a class="row" href="https://www.hootravel.com/zh-simplified/journeys">
+        <span class="idx">03</span>
+        <span class="main"><span class="ttl">一日游 · 达西庄园（伦敦往返）</span><span class="desc" style="display:block">查茨沃斯庄园主宅与花园，贝克韦尔小镇。</span></span>
+        <span class="meta"><b>3–12月 · 1日游</b>伦敦往返</span>
+        <span class="price"><small>起价</small><span class="num">£75</span><small>/人</small></span><span class="arr" aria-hidden="true">→</span></a></li>
+      <li><a class="row" href="https://www.hootravel.com/zh-simplified/journeys">
+        <span class="idx">04</span>
+        <span class="main"><span class="ttl">一日游 · 牛津＋温莎</span><span class="desc" style="display:block">温莎城堡与基督教堂学院，一天看王室与学府。</span></span>
+        <span class="meta"><b>全年 · 1日游</b>伦敦往返</span>
+        <span class="price"><small>起价</small><span class="num">£75</span><small>/人</small></span><span class="arr" aria-hidden="true">→</span></a></li>
+      <li><a class="row" href="https://www.hootravel.com/zh-simplified/journeys">
+        <span class="idx">05</span>
+        <span class="main"><span class="ttl">两日游 · 达西庄园圣诞＋约克圣诞市集</span><span class="desc" style="display:block">第一天走进《傲慢与偏见》彭伯利的圣诞，住贝克韦尔小镇；第二天逛约克圣尼古拉斯市集和肉铺街灯饰。回程坐 LNER 火车直达伦敦（约2小时），避免长途车程。</span></span>
+        <span class="meta"><b>11–12月 · 2日1晚</b>伦敦往返</span>
+        <span class="price"><small>起价</small><span class="num">£369</span><small>/人</small></span><span class="arr" aria-hidden="true">→</span></a></li>
+      <li><a class="row" href="https://www.hootravel.com/zh-simplified/journeys">
+        <span class="idx">06</span>
+        <span class="main"><span class="ttl">6日 · 英伦精华环线｜爱丁堡版（圣诞版）</span><span class="desc" style="display:block">不去高地，爱丁堡留足一天半：城堡、皇家一英里、维多利亚街和卡尔顿山日落。沿途圣诞市集与庄园圣诞布置，高地日走罗蒙湖与格伦科。</span></span>
+        <span class="meta"><b>11–12月 · 6日5晚</b>伦敦往返</span>
+        <span class="price"><small>起价</small><span class="num">£1,609</span><small>/人</small></span><span class="arr" aria-hidden="true">→</span></a></li>
+    </ul>
+    <p class="routes-foot">以上价格取自当前线上网站，以顾问最终报价为准。</p>
+  </div>
+</section>
+
+<!-- 四种出行方式 -->
+<section class="services" aria-labelledby="svc-title">
+  <div class="wrap">
+    <h2 id="svc-title" class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">四种出行方式</h2>
+    <ul class="svc">
+      <li><h4>独立专车包车定制</h4><p>一单一团专属奔驰座驾与华人司导，出发时间与停留节奏随心掌控，全家私密不拼车。</p></li>
+      <li><h4>4–8人精品小团</h4><p>严格封顶4–8人，同频旅伴从容慢行，避开景区大巴人流高峰，兼顾私密体验与品质。</p></li>
+      <li><h4>深度省心半自由行</h4><p>预订城际火车、极地航线与精选特色居所，打包高口碑在地体验，配备专属离线智能路书。</p></li>
+      <li><h4>主题深度专项策划</h4><p>围绕百年历史庄园独家包院居停、乡村轻徒步、极地极光摄影等特定偏好，因热爱而深度定制。</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 私人定制 -->
+<section class="private" id="private" aria-labelledby="private-title">
+  <div class="wrap">
+    <div class="private-grid">
+      <div class="copy">
+        <p class="label">私人定制 · 灵感设计</p>
+        <h2 id="private-title">原来，旅行可以<br>这样被设计</h2>
+        <p>也许是一家在英格兰乡村住上一周，一次只属于两个人的北欧冬日，一条沿冰岛海岸展开的自驾路线，或者围绕徒步、文学、花园、美食设计的一次旅行。</p>
+        <p>告诉我们你喜欢怎样旅行。旅行顾问会把目的地、住宿、当地体验和每天的节奏重新组合，让这次假期更接近你真正想要的样子。</p>
+        <a class="link" href="https://www.hootravel.com/zh-simplified/private-travel">探索私人定制 <span aria-hidden="true">→</span></a>
+        <div class="themes" aria-label="定制主题"><span>慢调漫游</span><span>自由自驾</span><span>极光冒险</span></div>
+      </div>
+      <div class="private-photo"><img src="{{img:highlands-rail}}" width="1200" height="896" alt="石楠花盛开的高地山谷，一座弧形高架桥横跨其间" loading="lazy"></div>
+    </div>
+    <div class="manor">
+      <div>
+        <p class="label">庄园与古堡</p>
+        <h3>私属古堡与庄园的隐世假期</h3>
+        <p>甄选英格兰百年历史庄园、私属古堡与野奢美宿，尊享独一无二的私密假期。</p>
+        <p class="tags">蜜月 · 庄园 · 古堡 · 独家包场</p>
+      </div>
+      <a class="btn btn-secondary" href="https://www.hootravel.com/zh-simplified/private-travel">定制咨询 <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 为什么选择 HOO -->
+<section id="why" aria-labelledby="why-title">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="label">为什么选择 HOO · 核心品质保障</p>
+        <h2 id="why-title" style="max-width:18em">专注于英国与北欧深度度假，让每一次远行都从容且富有质感</h2>
+      </div>
+    </div>
+    <p class="lead" style="margin-bottom:var(--sp-7)">英国在地与中国出境双重合规资质，多元化出行策划，精心挑选融入在地生活的特色居所，一手直签拒绝转包。</p>
+    <ul class="why-grid">
+      <li><h4>在地团队，深耕欧洲目的地</h4><p>创立于英国伦敦，并持有中国国际出境旅行社资质与商业保单。十年欧洲深度探路，一手直签拒绝转包，全流程正规托底。</p><div class="tags"><span>英国驻地</span><span>合规资质</span><span>一手直签</span><span>双重保障</span></div></li>
+      <li><h4>灵活策划出行方式，从容自在</h4><p>灵活组合城市与乡野自驾、奔驰商务专车、全景景观火车与海景轮渡，不拘泥单一形式，兼顾从容舒适与沿途美景。</p><div class="tags"><span>城市公路自驾</span><span>奔驰商务专车</span><span>全景火车</span><span>灵活随心</span></div></li>
+      <li><h4>多元甄选居所，注重在地融入</h4><p>注重住宿的多样性与在地生活体验的融合：从有温度的特色居停到舒适精品住所，精心挑选契合行程的好住处，兼顾品质与融入感。</p><div class="tags"><span>多元特色居所</span><span>在地生活融合</span><span>用心把关</span><span>舒适安心</span></div></li>
+      <li><h4>留足时间，深度融入当地生活</h4><p>拒绝打卡式赶场，预留充裕闲暇。在乡村 Pub 小酌、逛农场市集、品英式下午茶，沉浸地道在地生活。</p><div class="tags"><span>乡村Pub小酌</span><span>农场市集</span><span>英式下午茶</span><span>充裕留白</span></div></li>
+      <li><h4>专属管家协同，智能路书托底</h4><p>行前专属顾问一对一精细规划，行程中多对一专属管家全程待命，智能路书离线无忧导航。</p><div class="tags"><span>行前专属规划</span><span>行中24/7群</span><span>智能离线路书</span><span>全程托底</span></div></li>
+      <li><h4>有人真正负责，全程踏实心安</h4><p>正规商业保险，明细清晰拒绝隐形消费；出发前至归途全程有人负责跟进，出境旅行踏实无忧。</p><div class="tags"><span>正规商业保险</span><span>透明明细清单</span><span>全程有人负责</span><span>踏实心安</span></div></li>
+    </ul>
+    <div class="why-foot"><a class="link" href="https://www.hootravel.com/zh-simplified/why-hoo">了解我们的服务标准与品质细节 <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<!-- 常见问题（纸白） -->
+<section class="paper on-paper faq" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq-grid">
+    <div>
+      <p class="label">常见问题</p>
+      <h2 id="faq-title">常见疑问解答</h2>
+      <p class="lead">汇集关于英国与欧洲签证、行李规格、小费习俗与退改政策的核心疑问解答。</p>
+      <div class="more"><a class="btn btn-primary" href="https://www.hootravel.com/zh-simplified/faq">查看全部问题</a></div>
+    </div>
+    <div>
+      <details>
+        <summary>参加英国旅行需要办理什么签证？HOO 是否提供签证辅助材料？</summary>
+        <div class="ans"><span class="chip">官方支持</span><p>持中国护照前往英国需申请英国标准访客签证（Standard Visitor visa，通常为 2 年多次往返）。预订 HOO 行程后，我们可为旅客免费开具符合英国签证移民署（UKVI）审核规范的正规《英文境外旅行预订确认单》（含每日行程框架、合规地接社注册资质编号及确认酒店），帮助您顺利完成递签。</p></div>
+      </details>
+      <details>
+        <summary>8 人精选小团使用的是什么车辆？每人可以带多少行李？</summary>
+        <div class="ans"><span class="chip">舒适标准</span><p>HOO 英国小团统一使用奔驰商务车（Mercedes-Benz V-Class 或最新纯电 EQV / Sprinter 豪华中巴）。为确保每位旅客在车内拥有开阔的腿部舒展空间与后备箱配重平衡，标准建议为：每位旅客携带 1 件不超过 26–28 寸的标准托运行李箱 + 1 件随身手提背包。如有婴儿推车或大件器材，请提前向顾问报备以便统筹调度。</p></div>
+      </details>
+      <details>
+        <summary>HOO 行程安排的住宿标准是怎样的？会住偏远酒店吗？</summary>
+        <div class="ans"><span class="chip">品质严选</span><p>我们坚决拒绝走马观花旅行团常用的远离市区的“大巴团房”。在英格兰乡村与苏格兰，我们严选具有英伦历史底蕴的传统庄园客栈、精品酒店（Boutique Hotels）或 Booking 评分 8.5+ 的市中心优质酒店，确保步行可达核心小镇景观；在冰岛与北欧，我们优先挑选景观开阔的地热特色温泉酒店与木屋。每天均包含全套双人热早餐。</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 行动号召 -->
+<section class="cta" aria-labelledby="cta-title">
+  <div class="wrap">
+    <p class="label">Experience More · Travel Better</p>
+    <h2 id="cta-title">开始规划您的<span class="mark">下一次</span><br>英国与欧洲假期</h2>
+    <p class="lead">选择一条喜欢的经典路线，或告诉我们您期待怎样度过这次特别的度假时光。</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#routes">探索全部路线</a>
+      <a class="btn btn-secondary" href="https://www.hootravel.com/zh-simplified/private-travel">预约私人定制</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="brand">{{logo-dark}}<p>英国与欧洲精品旅行 · 私人定制策划。深耕全境稀缺庄园酒店、合规专车与极地探险，为整趟假期的精彩与从容质感负责。</p></div>
+      <div><h5>目的地</h5><ul>
+        <li><a href="https://www.hootravel.com/zh-simplified/destinations/uk">英国</a></li>
+        <li><a href="https://www.hootravel.com/zh-simplified/destinations/iceland">冰岛</a></li>
+        <li><a href="https://www.hootravel.com/zh-simplified/destinations/norway">挪威</a></li>
+        <li><a href="https://www.hootravel.com/zh-simplified/destinations/finland">芬兰</a></li>
+        <li><a href="https://www.hootravel.com/zh-simplified/destinations/faroe-islands">法罗群岛</a></li></ul></div>
+      <div><h5>定制与服务</h5><ul>
+        <li><a href="https://www.hootravel.com/zh-simplified/private-travel">私人定制全案</a></li>
+        <li><a href="https://www.hootravel.com/zh-simplified/why-hoo">行程助手 APP</a></li>
+        <li><a href="https://www.hootravel.com/zh-simplified/why-hoo">品质服务标准</a></li>
+        <li><a href="https://www.hootravel.com/zh-simplified/faq">常见问题 FAQ</a></li>
+        <li><a href="https://www.hootravel.com/zh-simplified/about">关于我们</a></li></ul></div>
+      <div><h5>咨询与联系</h5><ul>
+        <li>微信：higiland</li>
+        <li><a href="https://instagram.com/hootravel_in_uk">Instagram：@hootravel_in_uk ↗</a></li>
+        <li><a href="mailto:contact@hootravel.com">官方邮箱：contact@hootravel.com ↗</a></li>
+        <li>Fitzrovia, London W1T 2EW</li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 HOO TRAVEL · Hoopia Ltd. · Registered in England &amp; Wales.</span>
+      <span><a href="https://www.hootravel.com/zh-simplified/terms">服务协议与预订条款</a><a href="https://www.hootravel.com/zh-simplified/privacy">隐私政策与 GDPR 说明</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var h=document.querySelector('.site-header'),t=document.querySelector('.nav-toggle');
+  function onScroll(){h.classList.toggle('scrolled',window.scrollY>24)}
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+  t.addEventListener('click',function(){
+    var o=h.classList.toggle('open');t.setAttribute('aria-expanded',o);t.setAttribute('aria-label',o?'关闭菜单':'打开菜单');
+  });
+  document.querySelectorAll('.nav-panel a').forEach(function(a){a.addEventListener('click',function(){h.classList.remove('open');t.setAttribute('aria-expanded','false')})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&h.classList.contains('open')){h.classList.remove('open');t.setAttribute('aria-expanded','false');t.focus()}});
+})();
+</script>
+</body>
+</html>
