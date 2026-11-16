@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HOO TRAVEL 品牌指南</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600&display=swap">
+<style>
+/* HOO TRAVEL 品牌指南：自包含页面。所有样式限定在 .hg 内，嵌入后台时不会影响宿主页面。 */
+.hg{
+  --night-950:#170F3A;--night-900:#261A55;--night-800:#2F2266;--night-700:#3B2F78;
+  --purple:#5237A0;--purple-hover:#43308A;--bright:#7D63C8;--lav:#D9D0F4;--mist:#F3F0FA;--paper:#F7F6FB;
+  --line:#E1DCEF;--muted:#6F6A8E;--lime:#D8F36A;--sand:#E8D9C5;
+  --ok:#2F7D4F;--no:#B3382C;
+  --f-cn:'Noto Sans SC','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+  --f-latin:'Outfit','Noto Sans SC',system-ui,sans-serif;
+  --f-mono:'DM Mono',ui-monospace,Menlo,monospace;
+  font-family:var(--f-cn);font-size:15px;line-height:1.75;color:var(--night-900);background:var(--paper);
+  -webkit-font-smoothing:antialiased;color-scheme:light;
+}
+.hg *{box-sizing:border-box}
+.hg h1,.hg h2,.hg h3,.hg h4,.hg p,.hg ul,.hg dl,.hg dd,.hg figure,.hg table{margin:0;padding:0}
+.hg ul{list-style:none}
+.hg img{display:block;max-width:100%}
+.hg a{color:var(--purple)}
+.hg :focus-visible{outline:2px solid var(--purple);outline-offset:3px;border-radius:4px}
+.hg-top :focus-visible,.hg-dark :focus-visible{outline-color:var(--lime)}
+.hg-top{background:var(--night-900);color:#F3F0FA;padding:28px max(clamp(20px,4vw,48px),calc((100% - 1240px)/2 + clamp(20px,4vw,48px))) 40px}
+.hg-top img.hg-logo{height:30px;width:auto}
+.hg-top h1{font-family:var(--f-latin);font-size:clamp(30px,4.4vw,48px);font-weight:600;line-height:1.15;margin:28px 0 8px}
+.hg-top p{color:#D9D0F4;max-width:46em}
+.hg-top .hg-meta{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#B4ABDD;margin-top:20px;display:flex;gap:22px;flex-wrap:wrap}
+.hg-shell{display:grid;grid-template-columns:210px minmax(0,1fr);gap:clamp(24px,4vw,56px);max-width:1240px;margin:0 auto;padding:36px clamp(20px,4vw,48px) 80px}
+.hg-nav{position:sticky;top:20px;align-self:start;font-size:14px}
+.hg-nav ul{border-left:1px solid var(--line)}
+.hg-nav a{display:block;padding:6px 14px;color:var(--muted);text-decoration:none;border-left:2px solid transparent;margin-left:-1px}
+.hg-nav a:hover{color:var(--night-900)}
+.hg-nav a.on{color:var(--purple);border-left-color:var(--purple);font-weight:500}
+.hg-main section{padding-top:56px;scroll-margin-top:12px}
+.hg-main section:first-child{padding-top:0}
+.hg-eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.hg h2{font-family:var(--f-latin);font-size:clamp(26px,3vw,34px);font-weight:600;line-height:1.25;margin:6px 0 10px}
+.hg h3{font-size:18px;font-weight:600;margin:32px 0 10px}
+.hg .lead{color:var(--muted);max-width:44em;margin-bottom:22px}
+.hg p+p{margin-top:10px}
+.hg-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.hg-grid{display:grid;gap:14px}
+.hg-g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.hg-g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.hg-g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.hg-tag{display:inline-block;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;border:1px solid var(--purple);color:var(--purple);border-radius:99px;padding:1px 10px;margin:0 6px 6px 0}
+.hg-tags{margin-top:12px}
+.hg-kv{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-size:14px}
+.hg-kv dt{color:var(--muted)}
+.hg-two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hg-list li{padding:6px 0 6px 18px;position:relative;font-size:14px}
+.hg-list li::before{content:"";position:absolute;left:0;top:15px;width:6px;height:6px;border-radius:50%;background:var(--purple)}
+.hg-list.no li::before{background:var(--no)}
+.hg-list.yes li::before{background:var(--ok)}
+
+/* buttons / copy */
+.hg-btn{display:inline-flex;align-items:center;gap:8px;font:500 13.5px/1.2 var(--f-cn);padding:9px 16px;border-radius:99px;border:1px solid var(--purple);color:var(--purple);background:#fff;text-decoration:none;cursor:pointer;transition:background .15s,color .15s}
+.hg-btn:hover{background:var(--purple);color:#fff}
+.hg-btn.solid{background:var(--purple);color:#fff}
+.hg-btn.solid:hover{background:var(--purple-hover)}
+.hg-btn.sm{padding:5px 12px;font-size:12.5px}
+.hg-copied{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:var(--night-900);color:#F3F0FA;padding:10px 20px;border-radius:99px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:50}
+.hg-copied.show{opacity:1}
+
+/* logos */
+.hg-stage{border-radius:12px;display:flex;align-items:center;justify-content:center;padding:36px 24px;border:1px solid rgba(0,0,0,.06)}
+.hg-stage img{max-width:100%;height:auto}
+.hg-stage.h img{width:min(100%,460px)}
+.hg-stage.s img{width:min(100%,260px)}
+.hg-clear{position:relative;border:1.5px dashed var(--bright);padding:calc(var(--x,22px)*1);display:inline-block;border-radius:2px}
+.hg-clear img{width:min(60vw,380px)}
+.hg-clear::before,.hg-clear::after{font:11px var(--f-mono);color:var(--bright);position:absolute}
+.hg-clear::before{content:"x";left:calc(var(--x,22px)/2 - 3px);top:calc(var(--x,22px)/2 - 8px)}
+.hg-clear::after{content:"x";right:calc(var(--x,22px)/2 - 3px);bottom:calc(var(--x,22px)/2 - 8px)}
+.hg-mis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.hg-mis figure{border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.hg-mis .st{height:96px;display:flex;align-items:center;justify-content:center;padding:10px;overflow:hidden}
+.hg-mis .st img{width:70%;height:auto}
+.hg-mis figcaption{padding:8px 12px;font-size:13px;display:flex;gap:8px;align-items:center}
+.hg-mis figcaption b{color:var(--no);font-weight:700}
+
+/* avatar */
+.hg-av{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-end}
+.hg-av figure{text-align:center;font-size:13px;color:var(--muted)}
+.hg-av img{border-radius:50%;margin:0 auto 8px}
+.hg-sizes{display:flex;gap:14px;align-items:flex-end;margin-top:14px}
+.hg-sizes img{border-radius:50%}
+
+/* colors */
+.hg-sw{border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#fff;display:flex;flex-direction:column;text-align:left;font:inherit;cursor:pointer;padding:0;width:100%}
+.hg-sw:hover{border-color:var(--bright)}
+.hg-sw .c{height:88px;display:flex;align-items:flex-end;padding:10px 12px;font-family:var(--f-mono);font-size:12px}
+.hg-sw .m{padding:9px 12px 12px;font-size:13px;line-height:1.5}
+.hg-sw .m b{display:block;font-size:14px}
+.hg-sw .m span{color:var(--muted);display:block}
+.hg-sw .m code{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.hg-bar{display:flex;height:40px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.hg-bar i{display:block}
+.hg-brow{display:grid;grid-template-columns:110px 1fr;gap:14px;align-items:center;margin-bottom:10px;font-size:13px;color:var(--muted)}
+.hg-leg{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--muted);margin-top:8px}
+.hg-leg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;border:1px solid var(--line);vertical-align:-1px}
+.hg-line h4{font-size:16px;margin-bottom:4px}
+.hg-line p{font-size:13.5px;color:var(--muted)}
+.hg-chips{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.hg-chips span{display:inline-flex;align-items:center;gap:6px;font:11px var(--f-mono);border:1px solid var(--line);border-radius:99px;padding:2px 8px 2px 3px}
+.hg-chips i{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.12)}
+.hg-draft{font:10.5px var(--f-mono);border:1px dashed var(--muted);color:var(--muted);border-radius:99px;padding:0 8px;margin-left:8px;vertical-align:2px}
+.hg-tbl{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.hg-row{display:grid;grid-template-columns:96px 64px minmax(0,1fr) 64px;gap:12px;align-items:center;padding:8px 14px;border-top:1px solid var(--line);font-size:13.5px}
+.hg-row:first-child{border-top:0}
+.hg-row .s{height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1px solid rgba(0,0,0,.1)}
+.hg-row .r{font-family:var(--f-mono)}
+.hg-row .v{font:12px var(--f-mono);text-align:right}
+.hg-row .v.y{color:var(--ok)}.hg-row .v.n{color:var(--no)}
+.hg-use{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.hg-use .d{height:78px;border-radius:10px 10px 0 0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:19px}
+.hg-use>div{border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden}
+.hg-use .t{padding:8px 12px 12px;font-size:13px;line-height:1.55}
+.hg-use .t b{display:block}.hg-use .t .y{color:var(--ok)}.hg-use .t .n{color:var(--no)}
+.hg-use .t span{color:var(--muted)}
+
+/* type / components */
+.hg-type{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.hg-type .a{font-size:46px;line-height:1.1;font-weight:600}
+.hg-scale{border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden}
+.hg-scale div{display:grid;grid-template-columns:110px 1fr 120px;gap:12px;align-items:baseline;padding:10px 14px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.hg-scale div:first-child{border-top:0}
+.hg-scale .smp{color:var(--night-900);line-height:1.25;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.hg-dark{background:var(--night-900);color:#F3F0FA;border-radius:12px;padding:22px}
+.hg-demo{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.hg-demo .b1{padding:11px 24px;border-radius:99px;background:#F3F0FA;color:var(--night-900);font-weight:500;font-size:14px}
+.hg-demo .b2{padding:11px 24px;border-radius:99px;border:1px solid var(--bright);color:#F3F0FA;font-weight:500;font-size:14px}
+.hg-demo .b3{padding:11px 24px;border-radius:99px;background:var(--purple);color:#fff;font-weight:500;font-size:14px}
+.hg-demo .lk{border-bottom:2px solid var(--lime);padding-bottom:2px;font-weight:500}
+.hg-demo .lk2{border-bottom:2px solid var(--purple);color:var(--purple);padding-bottom:2px;font-weight:500}
+.hg-rowdemo{display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 16px;position:relative;margin-top:10px;background:#fff}
+.hg-rowdemo::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--purple)}
+.hg-rowdemo .i{font:12px var(--f-mono);color:var(--muted)}
+.hg-rowdemo .p{font:500 22px var(--f-latin)}
+.hg-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.hg-photos figure{border-radius:8px;overflow:hidden;position:relative}
+.hg-photos img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.hg-arch{border-radius:999px 999px 0 0!important}
+.hg-arch img{aspect-ratio:3/4}
+
+/* downloads */
+.hg-dl{border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden;margin-bottom:16px}
+.hg-dl h3{margin:0;padding:14px 18px;font-size:16px;border-bottom:1px solid var(--line);background:var(--mist)}
+.hg-dl li{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.5fr) auto;gap:14px;align-items:center;padding:10px 18px;border-top:1px solid var(--line);font-size:13.5px}
+.hg-dl li:first-child{border-top:0}
+.hg-dl .n{font-family:var(--f-mono);font-size:12px;word-break:break-all}
+.hg-dl .u{color:var(--muted);font-size:13px}
+.hg-dl .acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.hg-foot{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+.hg pre{background:var(--night-900);color:#D9D0F4;border-radius:10px;padding:14px 16px;overflow:auto;font:12px/1.7 var(--f-mono);max-height:260px}
+
+@media (max-width:900px){
+  .hg-shell{grid-template-columns:minmax(0,1fr)}
+  .hg-nav{position:static;min-width:0}
+  .hg-nav ul{display:flex;overflow-x:auto;border-left:0;border-bottom:1px solid var(--line)}
+  .hg-nav a{white-space:nowrap;border-left:0;border-bottom:2px solid transparent;margin:0}
+  .hg-nav a.on{border-bottom-color:var(--purple)}
+  .hg-g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hg-g3,.hg-type,.hg-photos{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hg-mis{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:600px){
+  .hg-g2,.hg-g3,.hg-g4,.hg-type,.hg-photos,.hg-two{grid-template-columns:1fr}
+  .hg-mis{grid-template-columns:1fr}
+  .hg-row{grid-template-columns:84px 54px minmax(0,1fr)}.hg-row .v{grid-column:2/4;text-align:left}
+  .hg-scale div{grid-template-columns:1fr}
+  .hg-dl li{grid-template-columns:1fr}.hg-dl .acts{justify-content:flex-start}
+  .hg-brow{grid-template-columns:1fr;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){.hg *{transition:none!important}}
+</style>
+</head>
+<body style="margin:0;background:#F7F6FB">
+<div class="hg" id="hg-root">
+
+<header class="hg-top">
+  <img class="hg-logo" src="{{LOGO_DARK}}" alt="HOO TRAVEL 花火出国游">
+  <h1>品牌指南</h1>
+  <p>HOO TRAVEL · 花火出国游 的 logo、头像、色彩、字体和使用规则。设计和内容人员做任何对外物料之前，请先看这一页。</p>
+  <div class="hg-meta"><span>版本 1.0</span><span>2026 年 11 月</span><span>点击色块可复制色值，点击"下载"可保存文件</span></div>
+</header>
+
+<div class="hg-shell">
+<nav class="hg-nav" aria-label="目录"><ul>
+  <li><a href="#hg-brand">品牌概述</a></li>
+  <li><a href="#hg-logo">Logo</a></li>
+  <li><a href="#hg-avatar">头像与图标</a></li>
+  <li><a href="#hg-color">色彩</a></li>
+  <li><a href="#hg-type">字体</a></li>
+  <li><a href="#hg-ui">版式与组件</a></li>
+  <li><a href="#hg-photo">图片与文字</a></li>
+  <li><a href="#hg-dl">下载中心</a></li>
+</ul></nav>
+
+<main class="hg-main">
+
+<!-- 1 品牌概述 -->
+<section id="hg-brand">
+  <p class="hg-eyebrow">01 · Brand</p>
+  <h2>品牌概述</h2>
+  <p class="lead">HOO TRAVEL 是由英国本地团队策划的英伦深度私人旅行品牌，服务华人家庭、夫妻和朋友小团。我们卖的不是景点清单，而是一种进入当地生活的旅行方式。</p>
+  <div class="hg-two">
+    <div class="hg-card"><div class="hg-eyebrow">中文品牌母题</div><p style="font-size:20px;font-weight:600;margin-top:6px">在英国，不赶路，去生活。</p></div>
+    <div class="hg-card"><div class="hg-eyebrow">English tagline</div><p style="font-size:20px;font-weight:600;margin-top:6px;font-family:var(--f-latin)">TRAVEL FURTHER · LIVE DEEPER</p></div>
+  </div>
+  <h3>品牌人格</h3>
+  <div class="hg-tags"><span class="hg-tag">克制</span><span class="hg-tag">在地</span><span class="hg-tag">有判断</span><span class="hg-tag">有审美</span><span class="hg-tag">有温度</span><span class="hg-tag">有生活感</span><span class="hg-tag">有专业度</span></div>
+  <h3>视觉原则</h3>
+  <div class="hg-two">
+    <div class="hg-card"><b>要强调</b><ul class="hg-list yes"><li>空气感、留白</li><li>风景中的人、建筑、居住空间</li><li>光线、季节、生活细节</li><li>真实场景，英国质感</li></ul></div>
+    <div class="hg-card"><b>要减少</b><ul class="hg-list no"><li>满屏卖点、大红大黄</li><li>价格占据封面主视觉</li><li>大量景点拼贴</li><li>"几天几夜"式的旅行团视觉</li></ul></div>
+  </div>
+  <p style="margin-top:14px;color:var(--muted)">希望人们看到内容后的第一反应是"我想住进去"，而不只是"我想去那里拍张照"。</p>
+</section>
+
+<!-- 2 Logo -->
+<section id="hg-logo">
+  <p class="hg-eyebrow">02 · Logo</p>
+  <h2>Logo</h2>
+  <p class="lead">由图标和 HOOTRAVEL 字标组成。图标是一个有缺口的圆环、一盏黄绿色的灯和三根迸发的火花线，对应"住进一个地方，遇见一个瞬间"。字标的字形沿用品牌原有版本，没有改动。</p>
+  <h3>标准横版</h3>
+  <div class="hg-grid hg-g2">
+    <div class="hg-stage h" style="background:#fff"><img src="{{LOGO_LIGHT}}" alt="浅底横版 logo"></div>
+    <div class="hg-stage h" style="background:var(--night-900)"><img src="{{LOGO_DARK}}" alt="深底横版 logo"></div>
+  </div>
+  <p style="margin-top:10px;font-size:13.5px;color:var(--muted)">浅色背景用紫色版，深色或紫色背景用浅色版。近似方形的位置用竖版。</p>
+  <h3>竖版</h3>
+  <div class="hg-grid hg-g2">
+    <div class="hg-stage s" style="background:#fff"><img src="{{STACK_LIGHT}}" alt="浅底竖版 logo"></div>
+    <div class="hg-stage s" style="background:var(--night-900)"><img src="{{STACK_DARK}}" alt="深底竖版 logo"></div>
+  </div>
+  <h3>安全空间与最小尺寸</h3>
+  <div class="hg-two" style="align-items:center">
+    <div class="hg-stage h" style="background:#fff"><div class="hg-clear" style="--x:28px"><img src="{{LOGO_LIGHT}}" alt="安全空间示意"></div></div>
+    <div>
+      <ul class="hg-list">
+        <li><b>安全空间 x</b>：四周至少留出圆环直径的一半，不放文字、图片或边线。</li>
+        <li><b>横版最小宽度</b>：屏幕 120px，印刷 30mm。</li>
+        <li><b>只用图标时</b>：屏幕最小 32px。16px 到 31px 请用网页图标专用版（去掉火花线），文件见下载中心。</li>
+      </ul>
+    </div>
+  </div>
+  <h3>错误用法</h3>
+  <div class="hg-mis">
+    <figure><div class="st" style="background:#fff"><img src="{{LOGO_LIGHT}}" style="transform:scaleX(1.6)" alt=""></div><figcaption><b>✕</b>不要拉伸或压扁</figcaption></figure>
+    <figure><div class="st" style="background:#fff"><img src="{{LOGO_LIGHT}}" style="transform:rotate(-9deg)" alt=""></div><figcaption><b>✕</b>不要旋转</figcaption></figure>
+    <figure><div class="st" style="background:#fff"><img src="{{LOGO_LIGHT}}" style="filter:hue-rotate(110deg) saturate(2.4)" alt=""></div><figcaption><b>✕</b>不要改颜色</figcaption></figure>
+    <figure><div class="st" style="background:#fff"><img src="{{LOGO_LIGHT}}" style="filter:drop-shadow(4px 6px 3px rgba(0,0,0,.55))" alt=""></div><figcaption><b>✕</b>不要加阴影或描边</figcaption></figure>
+    <figure><div class="st" style="background:var(--purple)"><img src="{{LOGO_LIGHT}}" alt=""></div><figcaption><b>✕</b>不要放在对比不足的底色上</figcaption></figure>
+    <figure><div class="st" style="background:url({{PHOTO_2}}) center/cover"><img src="{{LOGO_DARK}}" alt=""></div><figcaption><b>✕</b>不要直接压在复杂照片上</figcaption></figure>
+  </div>
+  <p style="margin-top:10px;font-size:13.5px;color:var(--muted)">必须放在照片上时，先给照片加一层从透明到夜紫 <code>#261A55</code> 的渐变压暗，再放深色版 logo。</p>
+</section>
+
+<!-- 3 头像 -->
+<section id="hg-avatar">
+  <p class="hg-eyebrow">03 · Avatar &amp; Icon</p>
+  <h2>头像与图标</h2>
+  <p class="lead">头像默认只放图标，不放文字：头像在微信、小红书、Instagram 上通常只有 32 到 48 像素，账号名本来就显示在旁边。</p>
+  <div class="hg-av">
+    <figure><img src="{{AV_NIGHT}}" width="168" height="168" alt="夜紫底头像"><b style="color:var(--night-900)">夜紫底（默认）</b></figure>
+    <figure><img src="{{AV_PURPLE}}" width="168" height="168" alt="品牌紫底头像"><b style="color:var(--night-900)">品牌紫底</b></figure>
+    <figure><img src="{{AV_MIST}}" width="168" height="168" alt="雾紫浅底头像"><b style="color:var(--night-900)">雾紫浅底（备选）</b></figure>
+    <figure><div class="hg-sizes"><img src="{{AV_NIGHT}}" width="64" height="64" alt=""><img src="{{AV_NIGHT}}" width="40" height="40" alt=""><img src="{{AV_NIGHT}}" width="32" height="32" alt=""></div>64 / 40 / 32px</figure>
+  </div>
+  <h3>什么时候用哪个文件</h3>
+  <div class="hg-tbl" style="margin-top:8px">
+    <div class="hg-row" style="grid-template-columns:200px minmax(0,1fr)"><b>微信、小红书、Instagram</b><span>上传<b>方形满铺</b>头像，平台会自己裁成圆形</span></div>
+    <div class="hg-row" style="grid-template-columns:200px minmax(0,1fr)"><b>文档、网页、海报里放头像</b><span>用<b>已裁成圆形</b>的版本（四角透明）</span></div>
+    <div class="hg-row" style="grid-template-columns:200px minmax(0,1fr)"><b>网站图标 favicon</b><span>用 <code>favicon.ico</code> 或 <code>hoo-favicon.svg</code>，16px 版本已去掉火花线</span></div>
+    <div class="hg-row" style="grid-template-columns:200px minmax(0,1fr)"><b>iOS / 安卓 App 图标</b><span>用圆角方形的 App 图标，系统会自己再裁一次，不要自己加圆角</span></div>
+  </div>
+</section>
+
+<!-- 4 色彩 -->
+<section id="hg-color">
+  <p class="hg-eyebrow">04 · Color</p>
+  <h2>色彩</h2>
+  <p class="lead">紫色是身份，荧光黄绿是信号，每条产品线再加一两个"天气色"。点击色块即可复制 HEX。</p>
+  <h3>核心色板（所有线路共用）</h3>
+  <div class="hg-grid hg-g4">{{CORE}}</div>
+  <h3>深色阶与浅色阶</h3>
+  <div class="hg-grid hg-g4">{{SCALE}}</div>
+  <h3>产品线的天气色</h3>
+  <div class="hg-grid hg-g2">{{LINES}}</div>
+  <h3>每条线的颜色比例（参考）</h3>
+  <p style="font-size:13.5px;color:var(--muted);margin-bottom:12px">用来判断一张图"荧光是不是用多了"，看荧光那一格就够。</p>
+  {{BARS}}
+  <div class="hg-leg">{{LEG}}</div>
+  <h3>荧光黄绿怎么用</h3>
+  <div class="hg-use">
+    <div><div class="d" style="background:#261A55;color:#D8F36A">每一处都住进去</div><div class="t"><b><span class="y">可以</span> 深底上的荧光字</b><span>对比 12.5:1</span></div></div>
+    <div><div class="d" style="background:#fff;color:#261A55"><span style="background:linear-gradient(transparent 56%,#D8F36A 56%,#D8F36A 92%,transparent 92%);padding:0 4px">留给乡村</span></div><div class="t"><b><span class="y">可以</span> 荧光笔条垫在深色字下</b><span>浅色底上只能这样用</span></div></div>
+    <div><div class="d" style="background:#5237A0;color:#D8F36A">已完成 2 / 25</div><div class="t"><b><span class="y">可以</span> 紫底上的状态和进度</b><span>对比 7.0:1</span></div></div>
+    <div><div class="d" style="background:#fff;color:#D8F36A">荧光字</div><div class="t"><b><span class="n">不可以</span> 浅色底上直接用荧光字</b><span>对比只有 1.16:1</span></div></div>
+    <div><div class="d" style="background:#D8F36A;color:#261A55">满屏荧光</div><div class="t"><b><span class="n">不可以</span> 大面积铺荧光</b><span>每屏最多一处，整体不超过 3%，高端度假为 0（logo 除外）</span></div></div>
+  </div>
+  <h3>文字与背景的对比度</h3>
+  <p style="font-size:13.5px;color:var(--muted);margin-bottom:10px">4.5 以上可以放正文，3 以上只适合大标题，低于 3 只能做色块。</p>
+  <div class="hg-tbl">{{TBL}}</div>
+</section>
+
+<!-- 5 字体 -->
+<section id="hg-type">
+  <p class="hg-eyebrow">05 · Typography</p>
+  <h2>字体</h2>
+  <p class="lead">一套无衬线：中文用思源黑体，数字和英文用 Outfit，小标签用 DM Mono。三者都可从 Google Fonts 免费使用。</p>
+  <div class="hg-type">
+    <div class="hg-card"><div class="hg-eyebrow">中文标题与正文</div><div class="a" style="margin:10px 0 4px">从容旅行</div><b>Noto Sans SC</b><p style="font-size:13px;color:var(--muted)">标题 500 到 600，正文 400</p></div>
+    <div class="hg-card"><div class="hg-eyebrow">数字与英文</div><div class="a" style="margin:10px 0 4px;font-family:var(--f-latin)">£2,152</div><b>Outfit</b><p style="font-size:13px;color:var(--muted)">价格、日期、英文标语</p></div>
+    <div class="hg-card"><div class="hg-eyebrow">小标签</div><div class="a" style="margin:10px 0 4px;font-family:var(--f-mono);font-size:30px;line-height:1.5;letter-spacing:.1em">ENGLAND</div><b>DM Mono</b><p style="font-size:13px;color:var(--muted)">全大写，字距 0.16em</p></div>
+  </div>
+  <h3>字号层级</h3>
+  <div class="hg-scale">
+    <div><span>Display</span><span class="smp" style="font-size:40px;font-weight:600">英国与北欧从容旅行</span><span>桌面 80 / 手机 40</span></div>
+    <div><span>H1</span><span class="smp" style="font-size:34px;font-weight:600">经典路线与旅行灵感</span><span>桌面 56 / 手机 34</span></div>
+    <div><span>H2</span><span class="smp" style="font-size:28px;font-weight:600">专注于英国和北欧</span><span>桌面 40 / 手机 28</span></div>
+    <div><span>H3</span><span class="smp" style="font-size:22px;font-weight:500">原来，旅行可以这样被设计</span><span>桌面 28 / 手机 22</span></div>
+    <div><span>H4</span><span class="smp" style="font-size:18px;font-weight:500">留足时间，深度融入当地生活</span><span>桌面 20 / 手机 18</span></div>
+    <div><span>正文</span><span class="smp" style="font-size:16px">每天只排两个地方。早上有雾，下午有茶，傍晚回到壁炉边。</span><span>17 / 16，行高 1.8</span></div>
+    <div><span>小字</span><span class="smp" style="font-size:14px">起价 £75 / 人 · 伦敦往返</span><span>14，行高 1.6</span></div>
+  </div>
+  <p style="margin-top:10px;font-size:13.5px;color:var(--muted)">正文每行 30 到 36 个汉字。标题字距 -0.01em，不使用粗黑体。</p>
+</section>
+
+<!-- 6 版式与组件 -->
+<section id="hg-ui">
+  <p class="hg-eyebrow">06 · Layout &amp; Components</p>
+  <h2>版式与组件</h2>
+  <p class="lead">网站主色调是夜紫，不使用奶油或米色做页面底色。内容密集的区块（路线表、常见问题、表单）切换为偏冷的纸白 <code>#F7F6FB</code>。</p>
+  <div class="hg-grid hg-g2">
+    <div class="hg-card"><b>区块节奏</b><ul class="hg-list"><li>首屏、目的地：夜紫</li><li>路线表、常见问题：纸白</li><li>"为什么选 HOO"：夜紫 800</li><li>页脚：夜紫 950</li></ul></div>
+    <div class="hg-card"><b>形状与间距</b><ul class="hg-list"><li>拱形（上圆下方）是唯一的签名形状，每页用 1 到 2 处</li><li>按钮胶囊形；卡片圆角 12px；照片圆角 8px</li><li>间距按 4 的倍数；版心最宽 1200px</li></ul></div>
+  </div>
+  <h3>按钮与链接</h3>
+  <div class="hg-dark"><div class="hg-demo"><span class="b1">浏览精选路线</span><span class="b2">预约私人定制</span><span class="lk">了解更多 →</span></div></div>
+  <div class="hg-card" style="margin-top:10px"><div class="hg-demo"><span class="b3">预约私人定制</span><span class="lk2">浏览全部路线 →</span></div></div>
+  <p style="margin-top:10px;font-size:13.5px;color:var(--muted)">深底上的主按钮用雾紫底；浅底上用品牌紫底。链接下面的 2px 下划线：深底用荧光，浅底用品牌紫。</p>
+  <h3>路线索引行</h3>
+  <div class="hg-rowdemo"><span class="i">01</span><span><b style="font-weight:500;font-size:17px">一日游 · 科茨沃尔德</b><br><span style="font-size:13px;color:var(--muted)">全年 · 伦敦往返</span></span><span class="p">£75</span></div>
+  <p style="margin-top:10px;font-size:13.5px;color:var(--muted)">默认只有 1px 底线；悬停时左侧出现 3px 竖条（深底用荧光，浅底用品牌紫），整行不铺色。</p>
+  <h3>焦点与状态</h3>
+  <ul class="hg-list"><li>键盘焦点：深底 2px 荧光框，浅底 2px 品牌紫框，偏移 3px。</li><li>禁用状态：透明度 45%，不可点。</li><li>状态色：成功 <code>#2F7D4F</code>，警告 <code>#9A5B00</code>，错误 <code>#B3382C</code>（深底上分别用 <code>#8FD9A8</code>、<code>#F2C078</code>、<code>#FF9A8F</code>）。</li></ul>
+</section>
+
+<!-- 7 图片与文字 -->
+<section id="hg-photo">
+  <p class="hg-eyebrow">07 · Imagery &amp; Voice</p>
+  <h2>图片与文字</h2>
+  <p class="lead">照片是主角，界面只负责框住它。</p>
+  <div class="hg-photos">
+    <figure class="hg-arch"><img src="{{PHOTO_1}}" alt="拱形裁切的高地风景照片"></figure>
+    <figure><img src="{{PHOTO_2}}" alt="石头小镇照片"></figure>
+    <figure><img src="{{PHOTO_3}}" alt="极光下的木屋照片"></figure>
+  </div>
+  <div class="hg-two" style="margin-top:14px">
+    <div class="hg-card"><b>图片规则</b><ul class="hg-list"><li>保持自然色彩，不加滤镜。</li><li>照片上放字，先加一层透明到夜紫的渐变压暗。</li><li>首屏和重点照片可以裁成拱形，每页 1 到 2 张。</li><li>图标用一套线性图标（线宽 1.5px），不用 emoji，不用插画。</li></ul></div>
+    <div class="hg-card"><b>文字风格</b><ul class="hg-list yes"><li>清楚、有判断、有画面、有具体细节、有理由。</li><li>用观点、案例、取舍来体现专业，让读者自己得出结论。</li></ul><b style="display:block;margin-top:12px">避免的表达</b><ul class="hg-list no"><li>天花板、闭眼冲、一生必去、绝绝子</li><li>顶级中的顶级、全网最低、不去后悔、必须打卡</li><li>极致性价比、超值、爆省</li></ul></div>
+  </div>
+  <p style="margin-top:12px;font-size:13.5px;color:var(--muted)">"高端""奢华""小众""深度""沉浸式"这几个词要谨慎使用，必须有具体内容支撑。比如不要只说"沉浸式英国旅行"，而要说"住进 Cottage 两晚、自己采购、做一顿晚餐、早晨在村庄散步"。</p>
+</section>
+
+<!-- 8 下载中心 -->
+<section id="hg-dl">
+  <p class="hg-eyebrow">08 · Downloads</p>
+  <h2>下载中心</h2>
+  <p class="lead">所有文件都可以直接下载。能用 SVG 的地方优先用 SVG，放大不失真；PNG 背景透明（头像除外）。</p>
+  {{DOWNLOADS}}
+  <h3>可直接复制的 CSS 变量</h3>
+  <p style="font-size:13.5px;color:var(--muted);margin-bottom:10px">开发人员可以把它粘进样式表，页面里只用变量名，不要写原始色值。</p>
+  <p style="margin-bottom:10px"><button class="hg-btn solid" type="button" data-copy-from="hg-tokens">复制全部变量</button></p>
+  <pre id="hg-tokens-view">{{TOKENS_ESC}}</pre>
+  <div class="hg-foot">如有品牌物料需求或使用疑问，请联系 <a href="mailto:contact@hootravel.com">contact@hootravel.com</a>。本指南随品牌更新，下载文件前请确认版本号。</div>
+</section>
+
+</main>
+</div>
+
+<div class="hg-copied" id="hg-copied" role="status" aria-live="polite"></div>
+<script type="text/plain" id="hg-tokens">{{TOKENS_RAW}}</script>
+</div>
+
+<script>
+(function(){
+  var root=document.getElementById('hg-root'),toast=document.getElementById('hg-copied'),tt;
+  function say(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},1600)}
+  function copy(text,msg){
+    function fb(){var ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;opacity:0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');say(msg)}catch(e){say('复制失败，请手动选择')}document.body.removeChild(ta)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(function(){say(msg)},fb)}else fb();
+  }
+  root.addEventListener('click',function(e){
+    var c=e.target.closest('[data-copy]');if(c){copy(c.getAttribute('data-copy'),'已复制 '+c.getAttribute('data-copy'));return}
+    var f=e.target.closest('[data-copy-from]');if(f){copy(document.getElementById(f.getAttribute('data-copy-from')).textContent,'已复制全部变量')}
+  });
+  var links=[].slice.call(root.querySelectorAll('.hg-nav a')),secs=links.map(function(a){return root.querySelector(a.getAttribute('href'))});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id)})}})},{rootMargin:'-20% 0px -70% 0px'});
+    secs.forEach(function(s){if(s)io.observe(s)});
+  }
+  links.forEach(function(a){a.addEventListener('click',function(e){var t=root.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})}})});
+})();
+</script>
+</body>
+</html>

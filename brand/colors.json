@@ -5,10 +5,18 @@
     "bright": "#7D63C8",
     "lavender": "#D9D0F4",
     "mist": "#F3F0FA",
-    "cream": "#FAF7F2",
+    "paper": "#F7F6FB",
     "sand": "#E8D9C5",
     "lime": "#D8F36A",
     "slate": "#6F6A8E"
+  },
+  "scale": {
+    "night-950": "#170F3A",
+    "night-800": "#2F2266",
+    "night-700": "#3B2F78",
+    "text-on-night-muted": "#B4ABDD",
+    "mist-2": "#EEEBF6",
+    "line-on-paper": "#E1DCEF"
   },
   "lines": {
     "uk": {
@@ -19,12 +27,12 @@
       "ice": "#BFE2F5",
       "aurora": "#5ED9BC"
     },
+    "retreat_draft": {
+      "aubergine": "#3B2457"
+    },
     "europe_draft": {
       "apricot": "#F6D8C2",
       "terracotta": "#D8825C"
-    },
-    "retreat_draft": {
-      "aubergine": "#3B2457"
     }
   }
 }

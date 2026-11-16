@@ -1,5 +1,8 @@
 # HOO TRAVEL · 花火出国游 品牌资料
 
+**云端文件固定存放位置（Google Drive）**：https://drive.google.com/drive/folders/1NTASyyIuE3MG1hyTh0EZtU_gkehUBtDu
+以后新文件都放这个文件夹。
+
 品牌紫 `#5237A0`，夜紫 `#261A55`，荧光黄绿 `#D8F36A`（只做点缀）。
 
 ## 文件夹
@@ -12,7 +15,9 @@
 | `brand/DESIGN.md` | 网站设计规范（颜色、字体、间距、组件） |
 | `brand/tokens.css` | 与规范对应的颜色、字体、间距变量 |
 | `brand/colors.css` · `colors.json` | 品牌色板 |
-| `brand/hoo-color-system.html` | 色彩说明书（可直接用浏览器打开） |
+| `brand-guide/index.html` | **品牌指南**，单文件，logo、头像、色彩、字体、下载中心都在里面，可直接放进网站后台 |
+| `brand-guide/build.py` | 重新生成品牌指南：改完 `template.html` 或 `build.py` 后运行 `python3 brand-guide/build.py` |
+| `brand/archive/` | 旧版色彩说明书，已被品牌指南取代 |
 | `brand/web-directions/` | 三个首页方向的效果图 |
 | `site/index.html` | 新首页，单文件，图片已内联，直接用浏览器打开 |
 | `site/index.src.html` · `build.py` · `img/` | 首页源文件。改完运行 `python3 site/build.py` 重新生成 `index.html` |
