@@ -111,36 +111,53 @@ MIME = {".svg": "image/svg+xml", ".png": "image/png", ".ico": "image/x-icon", ".
         ".json": "application/json", ".md": "text/markdown"}
 
 
+def kb(p: pathlib.Path):
+    n = p.stat().st_size
+    return f"{n/1024:.0f} KB" if n >= 1024 else f"{n} B"
+
+
 def act(label, p: pathlib.Path):
-    return f'<a class="hg-btn sm" href="{uri(p, MIME[p.suffix])}" download="{p.name}">{label}</a>'
+    return f'<a class="hg-btn sm" href="{uri(p, MIME[p.suffix])}" download="{p.name}" title="{p.name}">{label}<small>{kb(p)}</small></a>'
 
 
 P = logo / "png"
+# 每项： (名称, 用途, [(按钮文字, 文件)], 预览文件, 预览底色)
+# 预览底色：light 白底 / dark 夜紫底 / check 透明棋盘格 / round 圆形头像 / fav 网站图标
 groups = [
     ("完整 Logo（图标 + 字标）", [
-        ("横版 · 浅底（紫色版）", "网页页头、PPT、宣传册", [("SVG", logo / "hoo-logo-horizontal-light.svg"), ("PNG 1200", P / "hoo-logo-horizontal-light-1200w.png"), ("PNG 3000", P / "hoo-logo-horizontal-light-3000w.png")]),
-        ("横版 · 深底（浅色版）", "深色或紫色背景、视频片尾", [("SVG", logo / "hoo-logo-horizontal-dark.svg"), ("PNG 1200", P / "hoo-logo-horizontal-dark-1200w.png"), ("PNG 3000", P / "hoo-logo-horizontal-dark-3000w.png")]),
-        ("竖版 · 浅底", "近似方形的位置", [("SVG", logo / "hoo-logo-stacked-light.svg"), ("PNG 2000", P / "hoo-logo-stacked-light-2000w.png")]),
-        ("竖版 · 深底", "近似方形的深色位置", [("SVG", logo / "hoo-logo-stacked-dark.svg"), ("PNG 2000", P / "hoo-logo-stacked-dark-2000w.png")]),
+        ("横版 · 浅底（紫色版）", "网页页头、PPT、宣传册", [("SVG", logo / "hoo-logo-horizontal-light.svg"), ("PNG 1200", P / "hoo-logo-horizontal-light-1200w.png"), ("PNG 3000", P / "hoo-logo-horizontal-light-3000w.png")], logo / "hoo-logo-horizontal-light.svg", "light"),
+        ("横版 · 深底（浅色版）", "深色或紫色背景、视频片尾", [("SVG", logo / "hoo-logo-horizontal-dark.svg"), ("PNG 1200", P / "hoo-logo-horizontal-dark-1200w.png"), ("PNG 3000", P / "hoo-logo-horizontal-dark-3000w.png")], logo / "hoo-logo-horizontal-dark.svg", "dark"),
+        ("竖版 · 浅底", "近似方形的位置", [("SVG", logo / "hoo-logo-stacked-light.svg"), ("PNG 2000", P / "hoo-logo-stacked-light-2000w.png")], logo / "hoo-logo-stacked-light.svg", "light"),
+        ("竖版 · 深底", "近似方形的深色位置", [("SVG", logo / "hoo-logo-stacked-dark.svg"), ("PNG 2000", P / "hoo-logo-stacked-dark-2000w.png")], logo / "hoo-logo-stacked-dark.svg", "dark"),
     ]),
     ("图标与网站图标", [
-        ("图标 · 浅底（透明背景）", "只需要图标、不要字标", [("SVG", logo / "hoo-icon-light.svg"), ("PNG 1024", P / "hoo-icon-light-1024.png")]),
-        ("图标 · 深底（透明背景）", "深色背景上的图标", [("SVG", logo / "hoo-icon-dark.svg"), ("PNG 1024", P / "hoo-icon-dark-1024.png")]),
-        ("App 图标（圆角方形）", "iOS / 安卓 App，不要再自己加圆角", [("SVG", logo / "hoo-icon-app.svg"), ("PNG 1024", P / "hoo-icon-app-1024.png"), ("PNG 180", P / "hoo-icon-app-180.png")]),
-        ("网站图标 favicon", "浏览器标签页，16px 版本已去掉火花线", [("ICO", logo / "favicon.ico"), ("SVG", logo / "hoo-favicon.svg"), ("PNG 32", P / "favicon-32.png"), ("PNG 16", P / "favicon-16.png")]),
+        ("图标 · 浅底（透明背景）", "只需要图标、不要字标；背景透明，适合放在浅色底上", [("SVG", logo / "hoo-icon-light.svg"), ("PNG 1024", P / "hoo-icon-light-1024.png")], logo / "hoo-icon-light.svg", "check"),
+        ("图标 · 深底（透明背景）", "深色背景上的图标，圆环是浅色", [("SVG", logo / "hoo-icon-dark.svg"), ("PNG 1024", P / "hoo-icon-dark-1024.png")], logo / "hoo-icon-dark.svg", "dark"),
+        ("App 图标（圆角方形）", "iOS / 安卓 App，不要再自己加圆角", [("SVG", logo / "hoo-icon-app.svg"), ("PNG 1024", P / "hoo-icon-app-1024.png"), ("PNG 180", P / "hoo-icon-app-180.png")], logo / "hoo-icon-app.svg", "light"),
+        ("网站图标 favicon", "浏览器标签页；16px 版本已去掉火花线", [("ICO", logo / "favicon.ico"), ("SVG", logo / "hoo-favicon.svg"), ("PNG 32", P / "favicon-32.png"), ("PNG 16", P / "favicon-16.png")], logo / "hoo-favicon.svg", "fav"),
     ]),
     ("头像", [
-        ("夜紫底 · 方形满铺（默认）", "上传到微信、小红书、Instagram", [("PNG 1024", avatar / "hoo-avatar-night-1024.png"), ("SVG", avatar / "hoo-avatar-night.svg")]),
-        ("夜紫底 · 已裁成圆形", "放进文档、网页、海报（四角透明）", [("PNG 1024", avatar / "hoo-avatar-night-circle-1024.png"), ("SVG", avatar / "hoo-avatar-night-circle.svg")]),
-        ("品牌紫底 · 方形满铺", "需要更醒目的场合", [("PNG 1024", avatar / "hoo-avatar-purple-1024.png"), ("SVG", avatar / "hoo-avatar-purple.svg")]),
-        ("品牌紫底 · 已裁成圆形", "同上，已裁圆", [("PNG 1024", avatar / "hoo-avatar-purple-circle-1024.png"), ("SVG", avatar / "hoo-avatar-purple-circle.svg")]),
-        ("雾紫浅底（备选）· 方形 / 圆形", "浅色界面里使用，对比较弱", [("方形 PNG", avatar / "hoo-avatar-mist-1024.png"), ("圆形 PNG", avatar / "hoo-avatar-mist-circle-1024.png")]),
+        ("夜紫底 · 方形满铺（默认）", "上传到微信、小红书、Instagram，平台会自己裁成圆形", [("PNG 1024", avatar / "hoo-avatar-night-1024.png"), ("SVG", avatar / "hoo-avatar-night.svg")], avatar / "hoo-avatar-night-circle.svg", "round"),
+        ("夜紫底 · 已裁成圆形", "放进文档、网页、海报（四角透明）", [("PNG 1024", avatar / "hoo-avatar-night-circle-1024.png"), ("SVG", avatar / "hoo-avatar-night-circle.svg")], avatar / "hoo-avatar-night-circle.svg", "round"),
+        ("品牌紫底 · 方形满铺", "需要更醒目的场合", [("PNG 1024", avatar / "hoo-avatar-purple-1024.png"), ("SVG", avatar / "hoo-avatar-purple.svg")], avatar / "hoo-avatar-purple-circle.svg", "round"),
+        ("品牌紫底 · 已裁成圆形", "同上，已裁圆", [("PNG 1024", avatar / "hoo-avatar-purple-circle-1024.png"), ("SVG", avatar / "hoo-avatar-purple-circle.svg")], avatar / "hoo-avatar-purple-circle.svg", "round"),
+        ("雾紫浅底（备选）", "浅色界面里使用，对比较弱；方形和圆形各一个", [("方形 PNG", avatar / "hoo-avatar-mist-1024.png"), ("圆形 PNG", avatar / "hoo-avatar-mist-circle-1024.png")], avatar / "hoo-avatar-mist-circle.svg", "round"),
     ]),
 ]
+
+
+def thumb(preview, kind):
+    return f'<div class="th {kind}"><img src="{uri(preview, MIME[preview.suffix])}" alt="" loading="lazy"></div>'
+
+
+def item(name, use, files, preview, kind):
+    return (f'<li>{thumb(preview, kind)}<div class="tx"><span class="n">{name}</span><span class="u">{use}</span></div>'
+            f'<div class="acts">{"".join(act(l, p) for l, p in files)}</div></li>')
+
+
 DOWNLOADS = ""
 for gt, items in groups:
-    lis = "".join(f'<li><span class="n">{n}</span><span class="u">{u}</span><span class="acts">{"".join(act(l, p) for l, p in fs)}</span></li>' for n, u, fs in items)
-    DOWNLOADS += f'<div class="hg-dl"><h3>{gt}</h3><ul>{lis}</ul></div>'
+    DOWNLOADS += f'<div class="hg-dl"><h3>{gt}</h3><ul>{"".join(item(*i) for i in items)}</ul></div>'
 
 # 颜色变量文件（由本脚本统一生成，保证和页面一致）
 tok = {"core": {"night": "#261A55", "purple": "#5237A0", "bright": "#7D63C8", "lavender": "#D9D0F4", "mist": "#F3F0FA", "paper": "#F7F6FB",
@@ -153,12 +170,17 @@ flat = {**tok["core"], **tok["scale"], **{k: v for g in tok["lines"].values() fo
 (brand / "colors.css").write_text(":root{\n" + "".join(f"  --hoo-{k}: {v};\n" for k, v in flat.items()) + "}\n", encoding="utf-8")
 tokens_css = (brand / "tokens.css").read_text(encoding="utf-8")
 
+def fitem(tag, name, use, p):
+    return (f'<li><div class="th file">{tag}</div><div class="tx"><span class="n">{name}</span><span class="u">{use}</span></div>'
+            f'<div class="acts">{act("下载", p)}</div></li>')
+
+
 DOWNLOADS += ('<div class="hg-dl"><h3>色彩与规范文件</h3><ul>'
-              f'<li><span class="n">tokens.css</span><span class="u">网页开发用：颜色、字体、间距、圆角的完整变量</span><span class="acts">{act("下载", brand / "tokens.css")}</span></li>'
-              f'<li><span class="n">colors.css</span><span class="u">只含颜色的 CSS 变量</span><span class="acts">{act("下载", brand / "colors.css")}</span></li>'
-              f'<li><span class="n">colors.json</span><span class="u">颜色的 JSON 版本，给程序读取</span><span class="acts">{act("下载", brand / "colors.json")}</span></li>'
-              f'<li><span class="n">DESIGN.md</span><span class="u">网站设计规范全文（颜色、字体、间距、组件）</span><span class="acts">{act("下载", brand / "DESIGN.md")}</span></li>'
-              '</ul></div>')
+              + fitem("CSS", "tokens.css", "网页开发用：颜色、字体、间距、圆角的完整变量", brand / "tokens.css")
+              + fitem("CSS", "colors.css", "只含颜色的 CSS 变量", brand / "colors.css")
+              + fitem("JSON", "colors.json", "颜色的 JSON 版本，给程序读取", brand / "colors.json")
+              + fitem("MD", "DESIGN.md", "网站设计规范全文：颜色、字体、间距、组件", brand / "DESIGN.md")
+              + '</ul></div>')
 
 rep = {
     "{{LOGO_LIGHT}}": uri(logo / "hoo-logo-horizontal-light.svg", "image/svg+xml"),
