@@ -24,8 +24,6 @@ core = [
     ("品牌紫 Purple", "#5237A0", "Logo、主按钮、链接", "#FFFFFF"),
     ("亮紫 Bright", "#7D63C8", "深底上的装饰，不放文字", "#FFFFFF"),
     ("浅紫 Lavender", "#D9D0F4", "深底上的次级文字", "#261A55"),
-    ("雾紫 Mist", "#F3F0FA", "深底上的主文字、App 底色", "#261A55"),
-    ("纸白 Paper", "#F7F6FB", "浅色区块的底色", "#261A55"),
     ("沙色 Sand", "#E8D9C5", "照片上的字、高端度假的暖色", "#261A55"),
     ("荧光 Lime", "#D8F36A", "信号色，每屏一处", "#261A55"),
     ("灰紫 Slate", "#6F6A8E", "次级文字、TRAVEL 字标", "#FFFFFF"),
@@ -51,6 +49,13 @@ def swatch(n, h, role, fg):
             f'<span class="m"><b>{n}</b><span>{role}</span><code>RGB {rgb(h)}</code></span></button>')
 
 
+bgs = [
+    ("白色 White", "#FFFFFF", "卡片、表单、最干净的底", "#261A55"),
+    ("纸白 Paper", "#F7F6FB", "默认浅色区块（淡紫白）", "#261A55"),
+    ("雾紫 Mist", "#F3F0FA", "App、海报的浅底", "#261A55"),
+    ("暮色纸 Dusk", "#F4EEF0", "偶尔使用的暖白，偏玫瑰灰，不偏黄", "#261A55"),
+]
+BG = "".join(swatch(*c) for c in bgs)
 CORE = "".join(swatch(*c) for c in core)
 SCALE = "".join(swatch(*c) for c in scale)
 
@@ -162,11 +167,12 @@ for gt, items in groups:
 # 颜色变量文件（由本脚本统一生成，保证和页面一致）
 tok = {"core": {"night": "#261A55", "purple": "#5237A0", "bright": "#7D63C8", "lavender": "#D9D0F4", "mist": "#F3F0FA", "paper": "#F7F6FB",
                 "sand": "#E8D9C5", "lime": "#D8F36A", "slate": "#6F6A8E"},
+       "backgrounds": {"white": "#FFFFFF", "paper": "#F7F6FB", "mist": "#F3F0FA", "dusk": "#F4EEF0"},
        "scale": {"night-950": "#170F3A", "night-800": "#2F2266", "night-700": "#3B2F78", "text-on-night-muted": "#B4ABDD", "mist-2": "#EEEBF6", "line-on-paper": "#E1DCEF"},
        "lines": {"uk": {"honey": "#D9B88B", "moss": "#55704F"}, "nordic": {"ice": "#BFE2F5", "aurora": "#5ED9BC"},
                  "retreat_draft": {"aubergine": "#3B2457"}, "europe_draft": {"apricot": "#F6D8C2", "terracotta": "#D8825C"}}}
 (brand / "colors.json").write_text(json.dumps(tok, indent=2, ensure_ascii=False), encoding="utf-8")
-flat = {**tok["core"], **tok["scale"], **{k: v for g in tok["lines"].values() for k, v in g.items()}}
+flat = {**tok["core"], **tok["backgrounds"], **tok["scale"], **{k: v for g in tok["lines"].values() for k, v in g.items()}}
 (brand / "colors.css").write_text(":root{\n" + "".join(f"  --hoo-{k}: {v};\n" for k, v in flat.items()) + "}\n", encoding="utf-8")
 tokens_css = (brand / "tokens.css").read_text(encoding="utf-8")
 
@@ -193,7 +199,7 @@ rep = {
     "{{PHOTO_1}}": uri(here / "p1.webp", "image/webp"),
     "{{PHOTO_2}}": uri(here / "p2.webp", "image/webp"),
     "{{PHOTO_3}}": uri(here / "p3.webp", "image/webp"),
-    "{{CORE}}": CORE, "{{SCALE}}": SCALE, "{{LINES}}": LINES, "{{BARS}}": BARS, "{{LEG}}": LEG, "{{TBL}}": TBL,
+    "{{CORE}}": CORE, "{{BG}}": BG, "{{SCALE}}": SCALE, "{{LINES}}": LINES, "{{BARS}}": BARS, "{{LEG}}": LEG, "{{TBL}}": TBL,
     "{{DOWNLOADS}}": DOWNLOADS,
     "{{TOKENS_ESC}}": html.escape(tokens_css),
     "{{TOKENS_RAW}}": tokens_css.replace("</script", "<\\/script"),

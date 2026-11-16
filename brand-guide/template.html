@@ -6,7 +6,7 @@
 <title>HOO TRAVEL 品牌指南</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;600;700&family=Outfit:wght@400;500;600&family=ZCOOL+XiaoWei&display=swap">
 <style>
 /* HOO TRAVEL 品牌指南：自包含页面。所有样式限定在 .hg 内，嵌入后台时不会影响宿主页面。 */
 .hg{
@@ -171,6 +171,40 @@
 .hg-foot{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
 .hg pre{background:var(--night-900);color:#D9D0F4;border-radius:10px;padding:14px 16px;overflow:auto;font:12px/1.7 var(--f-mono);max-height:260px}
 
+
+/* 下载中心入口按钮 */
+.hg-toprow{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.hg-topdl{display:inline-flex;align-items:center;gap:8px;background:var(--lime);color:var(--night-900)!important;font-weight:700;font-size:14px;padding:10px 22px;border-radius:99px;text-decoration:none;transition:background .15s}
+.hg-topdl:hover{background:#fff}
+.hg-nav .hg-dlli{margin-top:14px}
+.hg-nav a.hg-dlbtn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--purple);color:#fff;border-radius:99px;padding:11px 16px;margin:0;border-left:0;font-weight:700;text-align:center}
+.hg-nav a.hg-dlbtn:hover,.hg-nav a.hg-dlbtn.on{background:var(--purple-hover);color:#fff}
+.hg-bgs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.hg-note{background:#fff;border:1px solid var(--line);border-left:3px solid var(--purple);border-radius:8px;padding:14px 18px;font-size:14px;margin-top:14px;line-height:1.8}
+.hg-filter{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 18px}
+.hg-filter button{font:500 13.5px var(--f-cn);padding:7px 16px;border-radius:99px;border:1px solid var(--line);background:#fff;color:var(--night-900);cursor:pointer}
+.hg-filter button[aria-pressed="true"]{background:var(--night-900);color:#fff;border-color:var(--night-900)}
+.hg-combo{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:16px}
+.hg-combo[hidden]{display:none}
+.hg-combo .hd{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:12px 18px;background:var(--mist);border-bottom:1px solid var(--line)}
+.hg-combo .hd b{font-size:16px}
+.hg-combo .bd{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+.hg-combo .pv{padding:22px 24px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:12px;justify-content:center;min-height:210px}
+.hg-combo .pv .t{font-size:34px;line-height:1.25}
+.hg-combo .pv .p{font-size:15px;color:var(--muted);line-height:1.9}
+.hg-combo .pv .n{font-size:24px}
+.hg-combo .pv .cap{font:11px var(--f-mono);color:var(--lav);letter-spacing:.04em}
+.hg-combo .in{padding:18px 20px;font-size:13.5px}
+.hg-combo .in dl{display:grid;grid-template-columns:64px 1fr;gap:6px 12px;margin-bottom:12px}
+.hg-combo .in dt{color:var(--muted)}
+.hg-lic{display:inline-block;font:11.5px var(--f-mono);border-radius:99px;padding:2px 10px;margin:2px 4px 2px 0}
+.hg-lic.ok{background:#E6F4EC;color:#1F6B42}
+.hg-lic.warn{background:#FFF1DC;color:#8A5300}
+.hg-ftbl{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.hg-ftbl .r{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr) minmax(0,1.8fr);gap:14px;padding:11px 16px;border-top:1px solid var(--line);font-size:13.5px;align-items:start}
+.hg-ftbl .r:first-child{border-top:0;background:var(--mist);font-weight:600}
+@media (max-width:900px){.hg-bgs{grid-template-columns:repeat(2,minmax(0,1fr))}.hg-combo .bd{grid-template-columns:1fr}.hg-combo .pv{border-right:0;border-bottom:1px solid var(--line)}}
+@media (max-width:600px){.hg-bgs{grid-template-columns:1fr}.hg-ftbl .r{grid-template-columns:1fr;gap:4px}.hg-ftbl .r:first-child{display:none}}
 @media (max-width:900px){
   .hg-shell{grid-template-columns:minmax(0,1fr)}
   .hg-nav{position:static;min-width:0}
@@ -196,7 +230,7 @@
 <div class="hg" id="hg-root">
 
 <header class="hg-top">
-  <img class="hg-logo" src="{{LOGO_DARK}}" alt="HOO TRAVEL 花火出国游">
+  <div class="hg-toprow"><img class="hg-logo" src="{{LOGO_DARK}}" alt="HOO TRAVEL 花火出国游"><a class="hg-topdl" href="#hg-dl">下载中心 <span aria-hidden="true">↓</span></a></div>
   <h1>品牌指南</h1>
   <p>HOO TRAVEL · 花火出国游 的 logo、头像、色彩、字体和使用规则。设计和内容人员做任何对外物料之前，请先看这一页。</p>
   <div class="hg-meta"><span>版本 1.0</span><span>2026 年 11 月</span><span>点击色块可复制色值，点击"下载"可保存文件</span></div>
@@ -211,7 +245,7 @@
   <li><a href="#hg-type">字体</a></li>
   <li><a href="#hg-ui">版式与组件</a></li>
   <li><a href="#hg-photo">图片与文字</a></li>
-  <li><a href="#hg-dl">下载中心</a></li>
+  <li class="hg-dlli"><a class="hg-dlbtn" href="#hg-dl"><span aria-hidden="true">↓</span> 下载中心</a></li>
 </ul></nav>
 
 <main class="hg-main">
@@ -301,6 +335,9 @@
   <p class="lead">紫色是身份，荧光黄绿是信号，每条产品线再加一两个"天气色"。点击色块即可复制 HEX。</p>
   <h3>核心色板（所有线路共用）</h3>
   <div class="hg-grid hg-g4">{{CORE}}</div>
+  <h3>浅色背景怎么选</h3>
+  <div class="hg-bgs">{{BG}}</div>
+  <div class="hg-note"><b>关于奶油色：</b>不把奶油、米黄色当页面默认底色，它太常见了，也容易让品牌看起来像模板。需要一点暖意时，用<b>暮色纸</b>：偏玫瑰灰、带一点紫红，不偏黄。只在英伦乡村线的内页区块和印刷品里偶尔使用，面积不超过页面的 1/3；不要和金色、明黄搭配，那样会变回常见的奶油风格。</div>
   <h3>深色阶与浅色阶</h3>
   <div class="hg-grid hg-g4">{{SCALE}}</div>
   <h3>产品线的天气色</h3>
@@ -326,13 +363,81 @@
 <section id="hg-type">
   <p class="hg-eyebrow">05 · Typography</p>
   <h2>字体</h2>
-  <p class="lead">一套无衬线：中文用思源黑体，数字和英文用 Outfit，小标签用 DM Mono。三者都可从 Google Fonts 免费使用。</p>
-  <div class="hg-type">
-    <div class="hg-card"><div class="hg-eyebrow">中文标题与正文</div><div class="a" style="margin:10px 0 4px">从容旅行</div><b>Noto Sans SC</b><p style="font-size:13px;color:var(--muted)">标题 500 到 600，正文 400</p></div>
-    <div class="hg-card"><div class="hg-eyebrow">数字与英文</div><div class="a" style="margin:10px 0 4px;font-family:var(--f-latin)">£2,152</div><b>Outfit</b><p style="font-size:13px;color:var(--muted)">价格、日期、英文标语</p></div>
-    <div class="hg-card"><div class="hg-eyebrow">小标签</div><div class="a" style="margin:10px 0 4px;font-family:var(--f-mono);font-size:30px;line-height:1.5;letter-spacing:.1em">ENGLAND</div><b>DM Mono</b><p style="font-size:13px;color:var(--muted)">全大写，字距 0.16em</p></div>
+  <p class="lead">不同场景用不同的字体组合：先看自己在做什么，再点下面的标签，直接取对应的一套。同一份物料里最多用两个中文字体。</p>
+
+  <div class="hg-filter" role="group" aria-label="按场景筛选字体组合">
+    <button type="button" data-f="all" aria-pressed="true">全部</button>
+    <button type="button" data-f="formal" aria-pressed="false">正式稳重</button>
+    <button type="button" data-f="elegant" aria-pressed="false">典雅高端</button>
+    <button type="button" data-f="vivid" aria-pressed="false">活力营销</button>
+    <button type="button" data-f="art" aria-pressed="false">文艺点缀</button>
   </div>
-  <h3>字号层级</h3>
+
+  <article class="hg-combo" data-tag="formal">
+    <div class="hd"><span class="hg-tag" style="margin:0">正式稳重</span><b>默认组合</b><span style="color:var(--muted);font-size:13px">官网、合同与报价单、商务小团资料、品牌手册、管理后台</span></div>
+    <div class="bd">
+      <div class="pv">
+        <div class="t" style="font-family:var(--f-cn);font-weight:600;letter-spacing:-.01em">从容旅行 · 深度定制</div>
+        <div class="p" style="font-family:var(--f-cn)">每天只排两个地方。早上有雾，下午有茶，傍晚回到壁炉边。</div>
+        <div class="n" style="font-family:var(--f-latin);font-weight:500">£2,152 <span style="font-size:14px;color:var(--muted);font-family:var(--f-cn)">/ 人起</span></div>
+      </div>
+      <div class="in">
+        <dl><dt>标题</dt><dd>思源黑体 Noto Sans SC，500 到 600</dd><dt>正文</dt><dd>思源黑体，400，行高 1.8</dd><dt>数字</dt><dd>Outfit，500</dd></dl>
+        <span class="hg-lic ok">开源 OFL · 可自由使用与分发</span>
+        <p style="margin-top:8px;color:var(--muted)"><b style="color:var(--night-900)">不要用在：</b>大面积粗黑体标题，会显得压迫。</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="hg-combo" data-tag="elegant">
+    <div class="hd"><span class="hg-tag" style="margin:0">典雅高端</span><b>衬线标题组合</b><span style="color:var(--muted);font-size:13px">英伦度假 · 高端定制、杂志感长文、邀请函、行程手册封面</span></div>
+    <div class="bd">
+      <div class="pv" style="background:var(--night-900);color:#F3F0FA">
+        <div class="t" style="font-family:'Noto Serif SC','Songti SC',serif;font-weight:600">在英国，不赶路，去生活。</div>
+        <div class="p" style="font-family:var(--f-cn);color:#D9D0F4">住进一座有壁炉的房子，给它两个晚上。</div>
+        <div class="n" style="font-family:var(--f-latin);font-weight:400;color:#E8D9C5;letter-spacing:.06em">TRAVEL FURTHER · LIVE DEEPER</div>
+      </div>
+      <div class="in">
+        <dl><dt>标题</dt><dd>思源宋体 Noto Serif SC，600</dd><dt>正文</dt><dd>思源黑体，400（宋体不用于小字号正文）</dd><dt>英文</dt><dd>Outfit，400，字距加宽</dd></dl>
+        <span class="hg-lic ok">开源 OFL · 可自由使用与分发</span>
+        <p style="margin-top:8px;color:var(--muted)"><b style="color:var(--night-900)">不要用在：</b>手机上的小字号正文，宋体细笔画在小屏幕上会发虚。</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="hg-combo" data-tag="vivid">
+    <div class="hd"><span class="hg-tag" style="margin:0">活力营销</span><b>粗黑标题组合</b><span style="color:var(--muted);font-size:13px">北欧活力线、小红书和朋友圈海报、短视频标题、活动促销图</span></div>
+    <div class="bd">
+      <div class="pv" style="background:var(--night-900);color:#F3F0FA">
+        <div class="t" style="font-family:var(--f-cn);font-weight:700;font-size:40px;letter-spacing:-.02em">冬天，<span style="color:var(--lime)">往北走</span>一走</div>
+        <div class="p" style="font-family:var(--f-cn);color:#D9D0F4;font-weight:500">半自助 · 小团 · 自己决定今天走多远</div>
+        <div class="cap">预览用思源黑体粗体示意版式；实际标题请安装站酷高端黑</div>
+      </div>
+      <div class="in">
+        <dl><dt>标题</dt><dd>站酷高端黑（首选）；或抖音美好体（见下方说明）</dd><dt>正文</dt><dd>思源黑体，500</dd><dt>数字</dt><dd>Outfit，600</dd></dl>
+        <span class="hg-lic warn">免费商用 · 需自行从官方下载，本指南不提供文件</span>
+        <p style="margin-top:8px;color:var(--muted)"><b style="color:var(--night-900)">不要用在：</b>官网正文、合同、高端度假的任何内容。</p>
+        <p style="margin-top:6px;color:var(--muted)"><b style="color:var(--night-900)">抖音美好体：</b>圆润、友好、偏年轻，适合贴纸、话题标签这类轻松内容。不建议当主标题字体，它和品牌"克制、有审美"的气质有距离。</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="hg-combo" data-tag="art">
+    <div class="hd"><span class="hg-tag" style="margin:0">文艺点缀</span><b>手写感短句组合</b><span style="color:var(--muted);font-size:13px">引言、节日海报短句（圣诞、简·奥斯汀主题）、签名</span></div>
+    <div class="bd">
+      <div class="pv">
+        <div class="t" style="font-family:'ZCOOL XiaoWei','Noto Serif SC',serif;font-size:40px">把秋天留给乡村</div>
+        <div class="p" style="font-family:'Noto Serif SC',serif">早上有雾，下午有茶，傍晚回到壁炉边。</div>
+      </div>
+      <div class="in">
+        <dl><dt>短句</dt><dd>站酷小薇体 ZCOOL XiaoWei</dd><dt>正文</dt><dd>思源宋体，400</dd></dl>
+        <span class="hg-lic ok">开源 OFL · 可自由使用与分发</span>
+        <p style="margin-top:8px;color:var(--muted)"><b style="color:var(--night-900)">不要用在：</b>超过 12 个字的标题，也不要和粗黑体同屏出现。</p>
+      </div>
+    </div>
+  </article>
+
+  <h3>字号层级（正式稳重组合）</h3>
   <div class="hg-scale">
     <div><span>Display</span><span class="smp" style="font-size:40px;font-weight:600">英国与北欧从容旅行</span><span>桌面 80 / 手机 40</span></div>
     <div><span>H1</span><span class="smp" style="font-size:34px;font-weight:600">经典路线与旅行灵感</span><span>桌面 56 / 手机 34</span></div>
@@ -342,8 +447,23 @@
     <div><span>正文</span><span class="smp" style="font-size:16px">每天只排两个地方。早上有雾，下午有茶，傍晚回到壁炉边。</span><span>17 / 16，行高 1.8</span></div>
     <div><span>小字</span><span class="smp" style="font-size:14px">起价 £75 / 人 · 伦敦往返</span><span>14，行高 1.6</span></div>
   </div>
-  <p style="margin-top:10px;font-size:13.5px;color:var(--muted)">正文每行 30 到 36 个汉字。标题字距 -0.01em，不使用粗黑体。</p>
+  <p style="margin-top:10px;font-size:13.5px;color:var(--muted)">正文每行 30 到 36 个汉字。标题字距 -0.01em。小标签用 DM Mono，全大写，字距 0.16em。</p>
+
+  <h3>字体包：去哪里取，哪些能放在我们这里</h3>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:12px">下表按授权分成两类。<b style="color:var(--night-900)">开源字体</b>可以放进公司统一的字体文件夹供大家下载，但要同时附上授权文件。<b style="color:var(--night-900)">免费商用字体</b>只确认了可以商用，没有找到允许再分发字体文件的条款，所以我们不存放文件，各人从官方渠道下载。</p>
+  <div class="hg-ftbl">
+    <div class="r"><span>字体</span><span>授权</span><span>获取方式</span></div>
+    <div class="r"><span>思源黑体 Noto Sans SC</span><span><span class="hg-lic ok">开源 OFL</span></span><span><a href="https://fonts.google.com/specimen/Noto+Sans+SC" target="_blank" rel="noopener">Google Fonts</a>，可放入团队字体文件夹</span></div>
+    <div class="r"><span>思源宋体 Noto Serif SC</span><span><span class="hg-lic ok">开源 OFL</span></span><span><a href="https://fonts.google.com/specimen/Noto+Serif+SC" target="_blank" rel="noopener">Google Fonts</a>，可放入团队字体文件夹</span></div>
+    <div class="r"><span>Outfit</span><span><span class="hg-lic ok">开源 OFL</span></span><span><a href="https://fonts.google.com/specimen/Outfit" target="_blank" rel="noopener">Google Fonts</a>，可放入团队字体文件夹</span></div>
+    <div class="r"><span>DM Mono</span><span><span class="hg-lic ok">开源 OFL</span></span><span><a href="https://fonts.google.com/specimen/DM+Mono" target="_blank" rel="noopener">Google Fonts</a>，可放入团队字体文件夹</span></div>
+    <div class="r"><span>站酷小薇体 ZCOOL XiaoWei</span><span><span class="hg-lic ok">开源 OFL</span></span><span><a href="https://fonts.google.com/specimen/ZCOOL+XiaoWei" target="_blank" rel="noopener">Google Fonts</a>，可放入团队字体文件夹</span></div>
+    <div class="r"><span>站酷高端黑</span><span><span class="hg-lic warn">免费商用</span></span><span>到站酷官网下载，下载时请核对当时的授权协议。<b>不要把文件放进我们的字体文件夹</b></span></div>
+    <div class="r"><span>抖音美好体</span><span><span class="hg-lic warn">免费商用</span></span><span>由抖音体验设计中心与方正字库联合推出，请到官方发布页下载并核对授权协议。<b>不要把文件放进我们的字体文件夹</b></span></div>
+  </div>
+  <div class="hg-note"><b>用在网页上要先瘦身：</b>一整套中文字体通常有几兆到十几兆，网页直接引用会很慢，必须先裁成只包含常用字的子集。<br><b>做成图片发布时：</b>是否需要额外授权，以各字体官方协议为准，不确定就先问清楚再用。</div>
 </section>
+
 
 <!-- 6 版式与组件 -->
 <section id="hg-ui">
@@ -414,6 +534,8 @@
     var c=e.target.closest('[data-copy]');if(c){copy(c.getAttribute('data-copy'),'已复制 '+c.getAttribute('data-copy'));return}
     var f=e.target.closest('[data-copy-from]');if(f){copy(document.getElementById(f.getAttribute('data-copy-from')).textContent,'已复制全部变量')}
   });
+  var fb=root.querySelectorAll('.hg-filter button'),cb=root.querySelectorAll('.hg-combo');
+  fb.forEach(function(b){b.addEventListener('click',function(){var f=b.getAttribute('data-f');fb.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});cb.forEach(function(c){c.hidden=!(f==='all'||c.getAttribute('data-tag')===f)})})});
   var links=[].slice.call(root.querySelectorAll('.hg-nav a')),secs=links.map(function(a){return root.querySelector(a.getAttribute('href'))});
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id)})}})},{rootMargin:'-20% 0px -70% 0px'});
